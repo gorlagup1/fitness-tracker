@@ -77,7 +77,7 @@
 <script>
 export default {
   data: ()=>({
-    isOpen: false
+    isOpen: false     
   })
 }
 </script>
