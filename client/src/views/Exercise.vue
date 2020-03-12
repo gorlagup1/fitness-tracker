@@ -1,5 +1,5 @@
 <template>      
-<section class="hero has-background-primary">
+<section class="hero has-background-primary">  
   
     <div class="container">
       <div class="title">
