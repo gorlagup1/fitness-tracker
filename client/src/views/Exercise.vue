@@ -5,7 +5,7 @@
       <div class="title">    
    
      <h2 class="has-text-black has-text-weight-bold has-text-right">
-          jogging              
+          jogging                
         
      </h2>
      <hr>
