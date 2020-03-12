@@ -12,7 +12,7 @@
       <h3 class="subtitle has-text-black has-text-weight-bold has-text-right"><b>
         jogging may be the simplest way to work out and to stay healthy. 
       </b></h3>
-       <h2 class="has-text-black has-text-weight-bold has-text-right">
+       <h2 class="has-text-black has-text-weight-bold has-text-right"> 
           jogging
         
      </h2>
