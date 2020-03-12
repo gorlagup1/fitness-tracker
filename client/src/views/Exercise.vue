@@ -1,4 +1,4 @@
-<template>   
+<template>      
 <section class="hero has-background-primary">
   
     <div class="container">
