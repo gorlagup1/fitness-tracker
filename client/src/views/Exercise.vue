@@ -1,7 +1,7 @@
 <template>      
 <section class="hero has-background-primary">        
   
-    <div class="container">      
+    <div class="container">         
       <div class="title">    
    
      <h2 class="has-text-black has-text-weight-bold has-text-right">
