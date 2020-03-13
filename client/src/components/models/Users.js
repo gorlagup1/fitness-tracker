@@ -1,3 +1,5 @@
+/* B"H
+*/
 const Users = [
     { Name: 'Pavani', Password: '2020', Email: 'gorlagup1@newpaltz.edu' },
     { Name: 'Gorlagunta', Password: '5780', Email: 'pavani@newpaltz.edu' },
@@ -6,7 +8,7 @@ const Users = [
 
 export let CurrentUser = null;
 
-export function Login1(email, password) {
+export function Login(email, password) {
 
     const user = Users.find(x => x.Email == email);
     if(!user) throw Error('User not found');
