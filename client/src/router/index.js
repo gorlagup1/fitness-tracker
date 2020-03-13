@@ -29,10 +29,10 @@ const routes = [
   import("../views/Login.vue")
 },
 {
-  path:"/sign-up",
-  name: "Sign-up",
+  path:"/login",
+  name: "Login1",
   component:()=>
-  import("../views/Sign-up.vue")
+  import("../views/Login1.vue")
 },
 {
   path:"/Exercise",
