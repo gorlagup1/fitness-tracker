@@ -6,7 +6,7 @@ const Users = [
 
 ];
 
-export let CurrentUser = null;
+export let CurrentUser = null;   
 
 export function Login(email, password) {
 
