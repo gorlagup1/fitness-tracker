@@ -1,12 +1,10 @@
-/* B"H
-*/
 const Users = [
-    { Name: 'Pavani', Password: '2020', Email: 'gorlagup1@newpaltz.edu' },
-    { Name: 'Gorlagunta', Password: '5780', Email: 'pavani@newpaltz.edu' },
-
+    { Name: 'Pavani', Password: '2020', Email: 'gorlagup1@hawkmail.newpaltz.edu' },
+    { Name: 'Pavan', Password: '5780', Email: '547gpavani@newpaltz.edu' },
+    
 ];
 
-export let CurrentUser = null;   
+export let CurrentUser = null;
 
 export function Login(email, password) {
 
@@ -15,4 +13,4 @@ export function Login(email, password) {
     if(user.Password != password) throw Error('Wrong Password');
 
     return CurrentUser = user;
-} 
+}
