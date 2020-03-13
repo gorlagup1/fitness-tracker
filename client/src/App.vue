@@ -1,25 +1,45 @@
 <template>
   <div id="app">
-    <MyNav>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/login">Login1-up</router-link>|
+      <router-link to="/Exercise">Exercise</router-link>
+      
      
-    </MyNav>
-    <router-view/>
+    </div>
+    <router-view />
   </div>
 </template>
 
-<script>
-import MyNav from "@/components/Nav.vue"
-  
-export default {
-    components: {
-        MyNav
-    }
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: black;
+  background-image: url(./assets/man.jpg);
+ padding:0px;
+ margin:0px;
+ right:0px;
+ left:0px;
+ font-size: 20px;
+ 
 }
-</script>
 
-<style scoped>
-body, html {
+#nav {
+  padding: 30px;
+
+  a {
     font-weight: bold;
-    color: #08b6ad;
+    color:peru;
+    font-size: 30px;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
   }
+}
 </style>
