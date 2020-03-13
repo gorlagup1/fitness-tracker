@@ -22,7 +22,7 @@
         </div>
         <div class="field">
         <p class="control">
-            <button class="button is-success">
+            <button class="button is-success" v-on:click="login">
             Login
             </button>
         </p>
@@ -42,20 +42,18 @@ export default {
     }
   },
   methods:{
-    login(){
-      try{
-        Login(this.email, this.password);
-        this.$router.push('/Exercise');
-      }catch(error){
-        this.error=error;
-       }
-     }
-   }
- }
-
+          login(){
+        try {
+          Login(this.email, this.password);
+          this.$router.push('/Exercise');
+        } catch (error) {
+          this.error = error;
+        }
+      }
+    }
+  }; 
 </script>
+
 <style>
-
+    
 </style>
-
-
