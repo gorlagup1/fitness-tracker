@@ -29,6 +29,8 @@
  left:0px;
  font-size: 20px;
  background: url("./assets/fittness.png");
+ background-repeat: no-repeat;
+ background-size: cover;
  
  
 }
