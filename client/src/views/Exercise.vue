@@ -3,7 +3,7 @@
   
     <div class="container">
       <div class="title">
-      <img src="https://image.freepik.com/free-vector/health-fitness-tracker-app-mobile-phone-screen-flat-cartoon_101884-617.jpg" width="250" height="190">
+      <img src="./assets/exercise.jpg" width="250" height="190">
      <h2 class="has-text-black has-text-weight-bold has-text-right">
           Walking 
         
