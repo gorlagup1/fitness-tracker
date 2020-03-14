@@ -84,14 +84,19 @@ export default {
 
 <style>
   .is-current {
+    list-style:none;
+    background:#663366;
     font-weight: bold;
-    color: blue;
-    text-align: right;
+    text-align: center;
+    padding:0;
+    margin:0;
+    display:inline-block;
   }
   .navbar {
     font: 1em sans-serif;
     text-align: center;
     font-weight: 500;
     color: #000;
+    display:inline-block;
   }
 </style>
