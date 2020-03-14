@@ -8,7 +8,9 @@
       <router-link to="/Exercise">Exercise</router-link>|
       <router-link to="/Contact Me">Contact Me</router-link>
       
-     
+   
+      
+      
     </div>
     <router-view />
   </div>
@@ -21,12 +23,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  background-image: url(./assets/man.jpg);
- padding:0px;
- margin:0px;
+ padding:200px 100px;
+ margin:90px;
  right:0px;
  left:0px;
  font-size: 20px;
+ background: url("./assets/fittness.png");
+ 
  
 }
 

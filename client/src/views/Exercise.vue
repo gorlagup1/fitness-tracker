@@ -3,7 +3,7 @@
   
     <div class="container">
       <div class="title">
-      <img src="../assets/exercise.jpg" width="250" height="190">
+      <img src="../assets/exercise.jpg" width="250" height="190" display:none>
      <h2 class="has-text-black has-text-weight-bold has-text-right">
           Walking 
         
