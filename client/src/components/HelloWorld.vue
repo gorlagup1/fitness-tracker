@@ -1,77 +1,94 @@
+
 <template>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-   
-    
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <router-link exact-active-class="active" class="navbar-item" to="/">
+            <i class="fas fa-home fa-pull-left"></i>
+            Home
+        </router-link>
 
-   <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div :class="{ 'is-active':isOpen }" class="navbar-menu">
-    <div class="navbar-start">
-      
+        <a @click.prevent="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
+    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
+        <div class="navbar-start">
 
-      <router-link to="/Home" class="navbar-item" active-class="is-current" exact>Home</router-link>|
-      <router-link to="/About" class="navbar-item" active-class="is-current" exact>About</router-link>|
-      <router-link to="/Excercise" class="navbar-item" active-class="is-current">Excercise</router-link>|
-      <router-link to="/Sign-up" class="navbar-item" active-class="is-current">Sign-up</router-link>|
-      <router-link to="/Login" class="navbar-item" active-class="is-current">Login</router-link>
-      
+        <router-link exact-active-class="active" class="navbar-item" to="/about">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+            About
+        </router-link>
+
       <div class="navbar-item has-dropdown is-hoverable">
-         
-         <div class="navbar-dropdown">
-          <router-link to="/Exercise" class="navbar-item">
-            Exercise</router-link>
-          </div>
-      </div>
-          
-<div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-item">
-          About</a>
-        
+      
+      <a class="navbar-link">
+        Login
+      </a>
 
-        <div class="navbar-dropdown">
-          <router-link to="/contact" class="navbar-item">
-            Contact</router-link>
-          
-           <hr class="navbar-divider">
-          <router-link to="/report" class="navbar-item">
-            Report an issue</router-link>
-          
-         
-          
-        </div>
+      <div class="navbar-dropdown">
+       <router-link exact-active-class="active" class="navbar-item" to="/log">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+          Login
+        </router-link>
+       <router-link exact-active-class="active" class="navbar-item" to="/adminsamples">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+          Sign-Up
+        </router-link>
       </div>
-    </div>  
+    </div>
+
+  <div class="navbar-item has-dropdown is-hoverable">
   
+  <a class="navbar-link">
+      Exercise
+    </a>
+
+    <div class="navbar-dropdown">
+       <router-link exact-active-class="active" class="navbar-item" to="/contact">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+        Contact
+      </router-link>
+      <hr class="navbar-divider">
+       <router-link exact-active-class="active" class="navbar-item" to="/report">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+        Report an issue
+      </router-link>
+    </div>
+  </div>
+</div>
 
     <div class="navbar-end">
       <div class="navbar-item">
-        
-          <router-link to="/sign" class="navbar-item">
-            Sign up</router-link>
-        
-          <router-link to="/login" class="navbar-item">
-            Log in</router-link>
-          
-        
+        <div class="buttons">
+        <router-link exact-active-class="active" class="navbar-item" to="/newuser">
+          <a class="button is-primary">
+            <strong>New User</strong>
+          </a>
+        </router-link>
+        <router-link exact-active-class="active" class="navbar-item" to="/login">
+          <a class="button is-primary">
+            <strong>Log in</strong>
+          </a>
+        </router-link>
+        </div>
       </div>
     </div>
   </div>
-
-
-  </nav>
+</nav>
 </template>
-
 <script>
 export default {
   data: ()=>({
     isOpen: false     
-  })
+  }),
+  methods:{
+    isTest(){
+      console.log('Anything')
+    }
+  }
 }
 </script>
 
