@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-  
-     <MyNav>
-       </MyNav>
+  <MyNav></MyNav>
        <router-view/>
   </div>
 </template>
@@ -18,9 +16,10 @@ export default {
 
 
 <style lang="scss">
-.navbar {
-  color:violet;
-  display:block;
- 
+body{
+  background-color:lightcyan;
+  background-image: url("./assets/fit.png");
 }
+ 
+
 </style>
