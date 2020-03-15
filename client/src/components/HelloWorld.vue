@@ -4,13 +4,12 @@
    
     
 
-    <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
+   //<a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-
   <div :class="{ 'is-active':isOpen }" class="navbar-menu">
     <div class="navbar-start">
       
@@ -18,15 +17,7 @@
 
       <router-link to="/Home" class="navbar-item" active-class="is-current" exact>Home</router-link>|
       <router-link to="/About" class="navbar-item" active-class="is-current" exact>About</router-link>|
-      
-      
-
-      
-
       <router-link to="/Excercise" class="navbar-item" active-class="is-current">Excercise</router-link>|
-      
-
-      
       <router-link to="/Sign-upt" class="navbar-item" active-class="is-current">Sign-up</router-link>|
       <router-link to="/Login" class="navbar-item" active-class="is-current">Login</router-link>
       
@@ -71,7 +62,9 @@
       </div>
     </div>
   </div>
-</nav>
+
+
+  </nav>
 </template>
 
 <script>
@@ -96,7 +89,8 @@ export default {
     font: 1em sans-serif;
     text-align: center;
     font-weight: 500;
-    color: #000;
+    color: blue;
     display:inline-block;
+    list-style:none;
   }
 </style>
