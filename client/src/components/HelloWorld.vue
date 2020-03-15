@@ -1,4 +1,3 @@
-
 <template>
   <nav class="navbar is-link" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -27,12 +26,6 @@
       <a class="navbar-link">
         Login
       </a>
-
-      <div class="navbar-dropdown">
-       <router-link exact-active-class="active" class="navbar-item" to="/log">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-          Login
-        </router-link>
        <router-link exact-active-class="active" class="navbar-item" to="/adminsamples">
             <i class="fab fa-vuejs fa-pull-left"></i>
           Sign-Up
@@ -76,7 +69,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </nav>
 </template>
 <script>
@@ -95,7 +88,7 @@ export default {
 <style>
   .is-current {
     list-style:none;
-    background:#663366;
+   color:black;
     font-weight: bold;
     text-align: center;
     padding:0;
