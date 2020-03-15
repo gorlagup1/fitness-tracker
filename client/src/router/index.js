@@ -1,11 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-
-
-
-
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -41,6 +36,12 @@ const routes = [
   name:"Contact Me",
   component:()=>
   import("../views/Contact Me.vue")
+},
+{
+  path:"/SignUp",
+  name: "Sign-Up",
+  component:()=>
+  import("../views/Sign-Up.vue")
 }
 ];
 
