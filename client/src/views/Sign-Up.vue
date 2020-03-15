@@ -71,20 +71,29 @@
 </template>
 
 <script>
+
+  import { SignUp } from "../models/Users";
+
 export default {
-  data: () => ({
+  data(){
+    return{
     username: "",
     email: "",
     password: ""
-  }),
-  methods: {
-    clear () {
-      this.username = "";
-      this.email = "",
-      this.password = "";
+    
+  }
+},
+  methods:{
+          SignUp(){
+        try {
+          Sign-Up(this.email, this.password);
+          this.$router.push('/Exercise');
+        } catch (error) {
+          this.error = error;
+        }
     }
   }
-}
+};
 </script>
 
 <style>

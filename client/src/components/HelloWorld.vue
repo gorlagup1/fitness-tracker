@@ -22,11 +22,11 @@
         </router-link>
 
       <div class="navbar-item has-dropdown is-hoverable">
-      
+      <router-link exact-active-class="active" class="navbar-item" to="/Login">
       <a class="navbar-link">
         Login
       </a>
-       <router-link exact-active-class="active" class="navbar-item" to="/adminsamples">
+       <router-link exact-active-class="active" class="navbar-item" to="/Sig-Up">
             <i class="fab fa-vuejs fa-pull-left"></i>
           Sign-Up
         </router-link>
