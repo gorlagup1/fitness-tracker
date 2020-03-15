@@ -13,12 +13,12 @@ export default {
   
 }
 </script>
-
+334
 
 <style lang="scss">
 body{
   background-color:lightcyan;
-  background-image: url("./assets/fit.png");
+  background-image: url("./assets/lady.png");
 }
  
 
