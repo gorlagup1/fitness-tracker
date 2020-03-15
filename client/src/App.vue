@@ -21,6 +21,6 @@ export default {
 .navbar {
   color:violet;
   display:block;
-  backgound-color:darkorange;
+ 
 }
 </style>

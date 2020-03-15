@@ -4,7 +4,7 @@
    
     
 
-   //<a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
+   <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -18,7 +18,7 @@
       <router-link to="/Home" class="navbar-item" active-class="is-current" exact>Home</router-link>|
       <router-link to="/About" class="navbar-item" active-class="is-current" exact>About</router-link>|
       <router-link to="/Excercise" class="navbar-item" active-class="is-current">Excercise</router-link>|
-      <router-link to="/Sign-upt" class="navbar-item" active-class="is-current">Sign-up</router-link>|
+      <router-link to="/Sign-up" class="navbar-item" active-class="is-current">Sign-up</router-link>|
       <router-link to="/Login" class="navbar-item" active-class="is-current">Login</router-link>
       
       <div class="navbar-item has-dropdown is-hoverable">
