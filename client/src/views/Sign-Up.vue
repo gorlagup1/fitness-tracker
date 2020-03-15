@@ -71,9 +71,7 @@
 </template>
 
 <script>
-
   import { SignUp } from "../models/Users";
-
 export default {
   data(){
     return{

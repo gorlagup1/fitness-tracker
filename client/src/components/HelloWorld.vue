@@ -27,7 +27,7 @@
             About
         </router-link>
      
-       <router-link exact-active-class="active" class="navbar-item" to="/Sig-Up">
+       <router-link exact-active-class="active" class="navbar-item" to="/Sign-Up">
             <i class="fab fa-vuejs fa-pull-left"></i>
           Sign-Up
         </router-link>
