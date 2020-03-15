@@ -16,16 +16,17 @@
     <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
         <div class="navbar-start">
 
-        <router-link exact-active-class="active" class="navbar-item" to="/about">
+        <router-link exact-active-class="active" class="navbar-item" to="/Login">
             <i class="fab fa-vuejs fa-pull-left"></i>
-            About
+            Login
         </router-link>
 
       <div class="navbar-item has-dropdown is-hoverable">
-      <router-link exact-active-class="active" class="navbar-item" to="/Login">
-      <a class="navbar-link">
-        Login
-      </a>
+      <router-link exact-active-class="active" class="navbar-item" to="/About">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+            About
+        </router-link>
+     
        <router-link exact-active-class="active" class="navbar-item" to="/Sig-Up">
             <i class="fab fa-vuejs fa-pull-left"></i>
           Sign-Up
