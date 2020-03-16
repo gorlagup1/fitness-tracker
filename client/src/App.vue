@@ -23,7 +23,7 @@ body{
   background:cover;
   border-radius:10px;
   padding:10px;
-  text-aligh:center;
+
   
 }
  

@@ -1,110 +1,67 @@
 <template>
-  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <router-link exact-active-class="active" class="navbar-item" to="/">
-            <i class="fas fa-home fa-pull-left"></i>
-            Home
-        </router-link>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+       <img src="../assets/exercise.jpg" width="250" height="190" display:none>
+    </a>
 
-        <a @click.prevent="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
+    <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
-        <div class="navbar-start">
+  <div :class="{ 'is-active':isOpen }" class="navbar-menu">
+    <div class="navbar-start">
 
-        <router-link exact-active-class="active" class="navbar-item" to="/Login">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-            Login
-        </router-link>
+
+      <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
+      <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
+      <router-link to="/exercise" class="navbar-item" active-class="is-current">Exercise</router-link>
+
 
       <div class="navbar-item has-dropdown is-hoverable">
-        
-         <router-link exact-active-class="active" class="navbar-item" to="/About">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-            About
-        </router-link>
-      
-      
-       <router-link exact-active-class="active" class="navbar-item" to="/adminsamples">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-          Sign-Up
-        </router-link>
+        <a class="navbar-link">
+          More OptionsS
+        </a>
+
+        <div class="navbar-dropdown">
+          <router-link to="/Contact Me" class="navbar-item" active-class="is-current" exact>Contact Me</router-link>
+          <router-link to="/Login" class="navbar-item" active-class="is-current" exact>Login</router-link>
+          <router-link to="/Sign-Up" class="navbar-item" active-class="is-current" exact>Sign-Up</router-link>
+         
+        </div>
       </div>
     </div>
-
-  <div class="navbar-item has-dropdown is-hoverable">
-  
-  <router-link exact-active-class="active" class="navbar-item" to="/Exercise">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-            Exercise
-        </router-link>
-
-    <div class="navbar-dropdown">
-       <router-link exact-active-class="active" class="navbar-item" to="/Contact Me">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-        Contact Me
-      </router-link>
-      <hr class="navbar-divider">
-       <router-link exact-active-class="active" class="navbar-item" to="/report">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-        Report an issue
-      </router-link>
-    </div>
-  </div>
-</div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-        <router-link exact-active-class="active" class="navbar-item" to="/newuser">
-          <a class="button is-primary">
-            <strong>New User</strong>
+          <a class="button is-primary" href="/Sign-Up">
+            <strong>Sign-up</strong>
           </a>
-        </router-link>
-        <router-link exact-active-class="active" class="navbar-item" to="/login">
-          <a class="button is-primary">
-            <strong>Log in</strong>
+          <a class="button is-light" href="/Login">
+            Login
           </a>
-        </router-link>
         </div>
       </div>
     </div>
-  
+  </div>
 </nav>
 </template>
+
 <script>
 export default {
   data: ()=>({
-    isOpen: false     
-  }),
-  methods:{
-    isTest(){
-      console.log('Anything')
-    }
-  }
+    isOpen: false
+  })
 }
 </script>
 
 <style>
   .is-current {
-    list-style:none;
-   color:blue;
     font-weight: bold;
-    text-align: center;
-    padding:0;
-    margin:0;
-    display:inline-block;
-  }
-  .navbar {
-    font: 1em sans-serif;
-    text-align: center;
-    font-weight: 500;
-    color: blue;
-    display:none;
-    list-style:none;
+    color: blueviolet
   }
 </style>
