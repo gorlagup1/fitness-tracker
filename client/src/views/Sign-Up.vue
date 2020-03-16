@@ -32,7 +32,6 @@
 
 <script>
   import { SignUp } from "../models/Sign";
-
 export default {
   data(){
     return{
