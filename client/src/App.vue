@@ -17,12 +17,13 @@ export default {
 
 <style lang="scss">
 body{
-
-  background-image: url("./assets/photo.jpg");
-  padding: 500px 100px;
-  margin: 100px;
-  background-repeat:no-repeat;
-  background-size:cover;
+  background-color:lightcyan;
+  background-image: url("./assets/fittness.png");
+  background-position:0px opx;
+  background:cover;
+  border-radius:10px;
+  padding:10px;
+  text-aligh:center;
   
 }
  

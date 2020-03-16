@@ -13,3 +13,7 @@
   </div>
   </section>
 </template>
+<style>
+.hero{
+  text-Align:center;
+}
