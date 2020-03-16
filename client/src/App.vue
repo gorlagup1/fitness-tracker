@@ -1,20 +1,28 @@
 <template>
-<left>
   <div id="app">
-    <div id ="nav">
-      <router-link to="/Sign-Up">Sign-Up</router-link>
-  </div>
+  <MyNav></MyNav>
        <router-view/>
   </div>
-  </left>
 </template>
-
+<script>
+import MyNav from "@/components/HelloWorld.vue"
+export default {
+  components: {
+    MyNav
+  }
+  
+}
+</script>
 
 
 <style lang="scss">
 body{
   background-color:lightcyan;
   background-image: url("./assets/fittness.png");
+  padding:200px;
+  margin:200px;
+  
+  
   
 }
  

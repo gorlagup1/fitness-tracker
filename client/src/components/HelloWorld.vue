@@ -41,7 +41,7 @@
     </a>
 
     <div class="navbar-dropdown">
-       <router-link exact-active-class="active" class="navbar-item" to="/contact">
+       <router-link exact-active-class="active" class="navbar-item" to="/Contact Me">
             <i class="fab fa-vuejs fa-pull-left"></i>
         Contact
       </router-link>
