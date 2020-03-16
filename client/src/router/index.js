@@ -1,6 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+
+
+
+
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,6 +29,12 @@ const routes = [
   component:()=>
   import("../views/Login.vue")
 },
+{
+  path:"/Sign-Up",
+  name:"Sign-Up",
+  component:()=>
+  import("../views/Sign-Up.vue")
+},
 
 {
   path:"/Exercise",
@@ -36,12 +47,6 @@ const routes = [
   name:"Contact Me",
   component:()=>
   import("../views/Contact Me.vue")
-},
-{
-  path:"/SignUp",
-  name: "Sign-Up",
-  component:()=>
-  import("../views/Sign-Up.vue")
 }
 ];
 
@@ -52,4 +57,4 @@ const router = new VueRouter({
 });
 
 
-export default router; 
+export default router;      

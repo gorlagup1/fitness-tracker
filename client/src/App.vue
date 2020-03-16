@@ -19,10 +19,9 @@ export default {
 body{
   background-color:lightcyan;
   background-image: url("./assets/fittness.png");
-  padding:200px;
-  margin:200px;
-  
-  
+  padding: 200px 100px;
+  margin: 100px;
+  background-repeat:no-repeat;
   
 }
  

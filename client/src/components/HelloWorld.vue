@@ -1,66 +1,80 @@
 <template>
   <nav class="navbar is-link" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item router-link-active" href="/">
+        <router-link exact-active-class="active" class="navbar-item" to="/">
             <i class="fas fa-home fa-pull-left"></i>
             Home
-            </a>
-       
+        </router-link>
 
-        <a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a @click.prevent="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu" >
+    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
         <div class="navbar-start">
-<a class="navbar-item" href="/Login">
+
+        <router-link exact-active-class="active" class="navbar-item" to="/Login">
             <i class="fab fa-vuejs fa-pull-left"></i>
             Login
-        </a>
+        </router-link>
 
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-item" href="/About">
-     
+        
+         <router-link exact-active-class="active" class="navbar-item" to="/About">
             <i class="fab fa-vuejs fa-pull-left"></i>
             About
-            </a>
-       <div class="navbar-item has-dropdown is-hoverable">
-         <a class="navbar-link">
-           Exercise
-           </a>
-    <div class="navbar-dropdown">
-      <a class="navbar-item" href="/Contact Me">
-      <i class="fab fa-vuejs fa-pull-left"></i>
-      Contact
-      </a>
-    <hr class="navbar-divider">
-    <a class="navbar-item" href="/Sign-Up">
-    <i class="fab fa-vuejs fa-pull-left">
-      </i>
-      Sign-Up
-      </a>
+        </router-link>
+      
+      
+       <router-link exact-active-class="active" class="navbar-item" to="/adminsamples">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+          Sign-Up
+        </router-link>
       </div>
-      </div>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="navbar-item" href="/newuser">
-            <a class="button is-primary">
-              <strong> New User </strong>
-              </a>
-              </a>
-              </div>
-              </div>
-              </div>
-              </nav>
-              <!---->
-              </div>
-              <!--built files will be auto injected-->
+    </div>
 
+  <div class="navbar-item has-dropdown is-hoverable">
+  
+  <router-link exact-active-class="active" class="navbar-item" to="/Exercise">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+            Exercise
+        </router-link>
+
+    <div class="navbar-dropdown">
+       <router-link exact-active-class="active" class="navbar-item" to="/Contact Me">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+        Contact Me
+      </router-link>
+      <hr class="navbar-divider">
+       <router-link exact-active-class="active" class="navbar-item" to="/report">
+            <i class="fab fa-vuejs fa-pull-left"></i>
+        Report an issue
+      </router-link>
+    </div>
+  </div>
+</div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        <router-link exact-active-class="active" class="navbar-item" to="/newuser">
+          <a class="button is-primary">
+            <strong>New User</strong>
+          </a>
+        </router-link>
+        <router-link exact-active-class="active" class="navbar-item" to="/login">
+          <a class="button is-primary">
+            <strong>Log in</strong>
+          </a>
+        </router-link>
+        </div>
+      </div>
+    </div>
+  
+</nav>
 </template>
 <script>
 export default {
@@ -78,7 +92,7 @@ export default {
 <style>
   .is-current {
     list-style:none;
-   color:black;
+   color:blue;
     font-weight: bold;
     text-align: center;
     padding:0;
@@ -90,7 +104,7 @@ export default {
     text-align: center;
     font-weight: 500;
     color: blue;
-    display:inline-block;
+    display:none;
     list-style:none;
   }
 </style>
