@@ -1,98 +1,59 @@
 <template>
-  <div class="signup">
-      <section class="hero is-info is-bold is-fullheight">
-        <div class="hero-body" style="display: inline-block;">
-            <div class="title has-text-centered">Sign-Up</div>
-            <div class="container level-item">
-                <div class="box">
-                      
-                      <div class="field">
-                        <label class="label">Username</label>
-                        <div class="control has-icons-left has-icons-right">
-                          <input class="input" type="text" v-model="username">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-user"></i>
-                          </span>
-                        </div>
-                        <p class="help is-dark">Enter an username</p>
-                      </div>
-
-                      <div class="field">
-                        <label class="label">Password</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input" type="password" v-model="password">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                            <p class="help is-dark">Enter a password</p>
-                        </div>
-                    </div>
-                      
-                      <div class="field">
-                        <label class="label">Email</label>
-                        <div class="control has-icons-left">
-                          <input class="input" type="email" v-model="email">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                          </span>
-                        </div>
-                        <p class="help is-dark">Enter an email</p>
-                      </div>
-                      
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-info">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button is-link is-light" @click="clear">Clear</button>
-                        </div>
-                      </div>
-
-                      <hr>
-
-                      <div class="field">
-                        <div class="control has-icon-left">
-                          <button class="button is-link">
-                            <span class="icon is-small is-left">
-                              <i class="fab fa-facebook-square"></i>
-                            </span>
-                            <span>
-                              Sign-up with Facebook
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-
-                    </div>
-                </div>
-            </div>
-    </section>
-  </div>
+  <form class="container" @submit.prevent="Sign">
+      {{error}}
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input class="input" type="UserName" placeholder="UserName" v-model="UserName" >
+            <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+            </span>
+        </p>
+        </div>
+        <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" v-model="password">
+            <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+            </span>
+        </p>
+        </div>
+        <div class="field">
+        <p class="control">
+            <button class="button is-success" v-on:click="Sign">
+            Sign-Up
+            </button>
+        </p>
+        </div>
+  </form>
 </template>
 
 <script>
-  import { SignUp } from "../models/Users";
+  import { SignUp } from "../models/Sign";
+
 export default {
   data(){
     return{
-    username: "",
-    email: "",
-    password: ""
-    
-  }
-},
+      email:'',
+      passsword:'',
+      error:''
+    }
+  },
   methods:{
-          SignUp(){
+          Sign(){
         try {
-          Sign-Up(this.email, this.password);
+          Sign-Up(this.Username, this.password);
           this.$router.push('/Exercise');
         } catch (error) {
           this.error = error;
         }
+      }
     }
-  }
-};
+  }; 
 </script>
 
 <style>
+    
 </style>

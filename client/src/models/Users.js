@@ -14,3 +14,4 @@ export function Login(email, password) {
 
     return CurrentUser = user;
 }
+

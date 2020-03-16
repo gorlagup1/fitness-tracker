@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-  <MyNav></MyNav>
-       <router-view/>
+    <div id ="nav">
+      <router-link to="/Sign-Up">Sign-Up</router-link>
+  </div>
+       <router-view/>Nav>
   </div>
 </template>
 <script>
