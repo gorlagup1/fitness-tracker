@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Fitness App Logo" src="../assets/logo1.png" height="120" width="100">
+    <img alt="Fitness App Logo" src="../assets/logo1.png" height="1200" width="140">
     <h1 class="title is-1">Welcome to Simple Fitness-Tracker App</h1>
     <HelloWorld msg="Balenced mind in the  balenced body?"/>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 export default {
   name: 'Home',
   components: {
