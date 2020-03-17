@@ -42,7 +42,7 @@
 
             <hr class="navbar-divider">
 
-            <router-link to="/https://www.simpletrackers.com/easy-fitness-trackers-for-seniors/" class="navbar-item" active-class="is-current">
+            <router-link to="/" class="navbar-item" active-class="is-current">
              More
             </router-link>
             </div>
@@ -54,7 +54,7 @@
                 <div class="buttons">
                     <router-link to="/signup" class="button is-primary" active-class="is-current">Sign-up</router-link>
                     <router-link to="/login" class="button is-light" active-class="is-current">Login</router-link>
-                    <router-link to="/https://www.simpletrackers.com/easy-fitness-trackers-for-seniors/" class="button is-light" active-class="is-current">more</router-link>
+                    
                 </div>
             </div>
         </div>
