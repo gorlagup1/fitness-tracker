@@ -4,7 +4,7 @@
     <article class="media">
       <figure class="media-left">
         <p class="image is-64x64">
-          <img src="../assets/man.jpg" />
+          <img src="../assets/sanarito.jpg" />
         </p>
       </figure>
       <div class="media-content">
