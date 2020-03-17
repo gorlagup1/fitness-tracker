@@ -44,7 +44,7 @@ export default {
       try{
           Login(this.email, this.password);
           //if no error display the log
-          this.$router.push('/Contact Me');
+          this.$router.push('/LoginPage');
       } catch (error){
           this.error = error;
       }
