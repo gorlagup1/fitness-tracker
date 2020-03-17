@@ -7,6 +7,6 @@
              <br>
              <li><strong>2.Phone:- 8456331108</strong></li>
               <br>
-             <li><strong>2.Email Id:- gorlagup1@hawkmail.newpaltz.edu</strong></li>
+             <li><strong>3.Email Id:- gorlagup1@hawkmail.newpaltz.edu</strong></li>
         </div></section>
 </template>
