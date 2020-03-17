@@ -15,12 +15,16 @@
                     <div class="overlay-left">
                         <h2>Welcome Back!</h2>
                         <p> Please Login with your personal info</p>
-                        <button class="invert" id="signIn" @click="SignUp = !signUp">signIn</button>
+                        <button class="invert" id="signIn" @click="SignUp = !signUp">
+                            Sign In
+                          </button>  
                     </div>
                     <div class="overlay-right">
                         <h2>Hello, Friends!!</h2>
                         <p> Please login with your personal info</p>
-                        <button class="invert" id="signUp" @click="signUp = !signUp">SignUp</button>
+                        <button class="invert" id="signUp" @click="signUp = !signUp">
+                            SignUp
+                        </button>
                     </div>
                 </div>
             </div>
@@ -40,7 +44,6 @@
         <input type="password" placeholder="Password"/>
         <a> Forget Password?</a>
         <router-link to ="/dash"><button>Signin</button></router-link>
-        <button>Sign up</button>
         </form>
         </div>
          </article>
@@ -59,6 +62,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+article {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  font-size: 16px;
+  padding-top:6% ;
+}
 .container{
     position:relative;
     width:768px;
@@ -134,7 +145,59 @@ button{
     &:focus{
         outline:none;
     }
-    background-color: #fff;
+}
+button.invert{
+    position:absolute;
+    top:70.5%;
+    background-color:black;
+    border-color:black;
+}
+    
+form{
+    position:absolute;
+    top:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction:column;
+    padding:90px 60px;
+    width:calc(50%-120px);
+    height:calc(100% - 180px);
+    text-align:center;
+    background:linear-gradient(to bottom, #efefef, #ccc);
+    transition:all .5s ease-in-out;
+div{
+        font-size:1rem;
+    }
+    input{
+        background-color:#eee;
+        border:none;
+        padding:8px 15px;
+        margin:6px 0;
+        width:calc(100% - 30px);
+        border-radius:15px;
+        border-bottom:1px solid #ddd;
+        box-shadow:inset 0 1px 2px rgba(0,0,0,.4),
+                         0 -1px #fff,
+                         0 1px 0 #fff;
+        overflow:hidden;
+
+        &:focus{
+            outline:none;
+            background-color:#fff;
+
+        }
+        }
+    }
+    .sign-in {
+  left: 0;
+  z-index: 2;
+}
+.sign-up {
+  left: 0;
+  top: -5%;
+  z-index: 1;
+  opacity: 0;
 }
 
 .sign-up-active{
@@ -176,49 +239,5 @@ button{
         z-index:10;
     }
 }
-button.invert{
-    background-color:transparent;
-    border-color:#fff;
-}
-    
-form{
-    position:absolute;
-    top:0;
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-    flex-direction:column;
-    padding:90px 60px;
-    width:calc(50%-120px);
-    height:calc(100% - 180px);
-    text-align:center;
-    background:linear-gradient(to bottom, #efefef, #ccc);
-    transition:all .5s ease-in-out;
-
-    div{
-        font-size:1rem;
-    }
-    input{
-        background-color:#eee;
-        border:none;
-        padding:8px 15px;
-        margin:6px 0;
-        width:calc(100% - 30px);
-        border-radius:15px;
-        border-bottom:1px solid #ddd;
-        box-shadow:inset 0 1px 2px rgba(0,0,0,.4),
-                         0 -1px #fff,
-                         0 1px 0 #fff;
-        overflow:hidden;
-
-        &:focus{
-            outline:none;
-            background-color:#fff;
-
-        }
-    }
-
-}
-
 
 </style>
