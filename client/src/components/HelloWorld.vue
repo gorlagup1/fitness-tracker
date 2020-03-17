@@ -1,77 +1,99 @@
 
-         <template>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-        <img src="../assets/logo1.png" width="112" height="28">
-        </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" :class="{'is-active':isOpen}" @click="isOpen =! isOpen">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div class="navbar-menu" :class="{'is-active':isOpen}">
-        <div class="navbar-start">
-        
-        <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
-        <router-link to="/Login" class="navbar-item" active-class="is-current">Login</router-link>
-      
-
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" active-class="is-current">
-            About
-            </a>
-
-            <div class="navbar-dropdown">
-                
-            <router-link to="/Contact Me" class='navbar-item' active-class="is-current">
-                Contact Me
-            </router-link>      
-
-            <hr class="navbar-divider">
-
-            <router-link to="/Exercise" class="navbar-item" active-class="is-current">
-                Exercise
-            </router-link>
-            <router-link to="/Signin" class="navbar-item" active-class="is-current">
-               Signin
-            </router-link>
-
-            <hr class="navbar-divider">
-
-            <router-link to="/routine" class="navbar-item" active-class="is-current">
-                More
-            </router-link>
-            </div>
-        </div>
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <router-link to="/signup" class="button is-primary" active-class="is-current">Sign up</router-link>
-                    <router-link to="/login" class="button is-light" active-class="is-current">Log in</router-link>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+       <template>
+  <div class="hello">
+    <h1 class="venu">{{ msg }}</h1>
+    <p>
+      Naredlav1 is designed to help you learn more so you can achieve more.<br />
+       It goes beyond tracking steps and calories to offer actionable insights on everything from your running style to your heart rate
+    </p>
+    <h3>A Design by Venu naredla</h3>
+        <ul>
+      <li>
+        <a
+          href="https://mail.google.com/"
+          target="_blank"
+          rel="noopener"
+          > <i class="fa fa-envelope"></i>&nbsp;Mail</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/gorlagup1/PROJECT"
+          target="_blank"
+          rel="noopener"
+          > <i class="fab fa-github"></i>&nbsp;GitHub</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/gorlagup1/fitness-tracker/blob/master/client/src/views/Contact%20Me.vue"
+          target="_blank"
+          rel="noopener"
+          ><i class="fa fa-address-book"></i>&nbsp;Contact</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/gorlagup1/fitness-tracker/blob/master/client/src/views/Exercise.vue/"
+          target="_blank"
+          rel="noopener"
+          ><i class="fa fa-globe"></i>&nbsp;Exercise</a
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script>
+<script >
 export default {
-    data: () => ({
-        isOpen: false
-    })
-}
+  name: "HelloWorld",
+  props: {
+    msg: String
+  }
+};
 </script>
 
-<style>
-    .is-current {
-        font-weight: bold;
-        color: black;
-    }
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+h3 {
+  margin: 40px 0 0;
+  position: fixed;
+  top: 66%;
+  left: 46%;
+  font-size: 16px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  position: fixed;
+  top:75%;
+  left:40%
+}
+li {
+  display: inline-block;
+  margin: 0 15px;
+}
+a {
+  position: relative;
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+  right: 11%;
+  font-size: 16px;
+}
+hello{
+  position:absolute;
+  top: 60%;
+}
+p{
+  position: fixed;
+  top: 55%;
+  font-size: 17px;
+  left: 23%;
+}
+.venu{
+   position: fixed;
+  top: 46%;
+  font-size: 38px;
+  left: 28%;
+}
 </style>
