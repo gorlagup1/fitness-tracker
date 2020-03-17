@@ -1,43 +1,66 @@
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-  import Vue from "vue";
-  import VueRouter from "vue-router";
-  import Home from "../views/Home.vue";
-  import dashboard from"../components/dashboard.vue";
-  Vue.use(VueRouter);
-  
-  const routes = [
-    {
-      path: "/",
-      name: "Home",
-      component: Home
-    },
-    {
-      path: "/dash",
-      name: "Signin",
-      component: dashboard
-    },
-    {
-      path: "/about",
-      name: "About",
-      component: () => import("../views/About.vue")
-    },
-    {
-      path: "/login",
-      name: "Sign&nbsp;up/Login",
-      component: () => import("../views/Login.vue")
-    },
-    {
-      path: "/instruction",
-      name: "Instructor Blog",
-      component: () => import("../views/Instruction.vue")
-    }
-  
-  ];
-  
-  const router = new VueRouter({
-    mode: "history",
-    base: process.env.BASE_URL,
-    routes
-  });
-  
-  export default router;
+
+
+
+
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home
+  },
+  {
+    path: "/about",
+    name: "About",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+  path:"/login",
+  name: "Login",
+  component:()=>
+  import("../views/Login.vue")
+},
+{
+  path:"/Sign-Up",
+  name:"Sign-Up",
+  component:()=>
+  import("../views/Sign-Up.vue")
+},
+
+{
+  path:"/Exercise",
+  name: "Exercise",
+  component:()=>
+  import("../views/Login.vue")
+},
+{
+  path:"/Contact Me",
+  name:"Contact Me",
+  component:()=>
+  import("../views/Contact Me.vue")
+},
+{
+  path:"/Signin",
+  name:"Signin",
+  component:()=>
+  import("../views/Signin.vue")
+}
+];
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
+});
+
+
+export default router;      

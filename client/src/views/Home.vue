@@ -1,32 +1,21 @@
 <template>
   <div class="home">
-     <div id="nav">
-      <ul>
-      
-      <li><router-link to="/">Home</router-link></li> 
-      <li><router-link to="/login">Sign&nbsp;up/Login</router-link></li> 
-      <li><router-link to="/instruction">Instructor&nbsp;Blog</router-link></li>  
-      <li><router-link to="/about">About</router-link></li>
-      
-     </ul>
-    </div>
-    <img class="ve" src="../assets/logo.png" width="185" height="auto" />
-    <HelloWorld msg="Welcome to Naredlav1 Fitness Tracker App" />
+    <img alt="Fitness App Logo" src="../assets/logo.png" height="256" width="200">
+    <h1 class="title is-1">Welcome to Simple Fitness-Tracker App</h1>
+    <HelloWorld msg="Balenced mind in the  balenced body?"/>
   </div>
 </template>
+
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HelloWorld
   }
-};
+}
 </script>
 <style>
-.ve {
-  position: fixed;
-  left: 46%;
-  top: 15%;
-}
+
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
- 
-    <router-view />
-    </div>
+<img src="../assets/fittness.jpg"/>
+       <router-view/>
+  </div>
 </template>
-
 <style lang="scss">
+
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 ul {
   list-style-type: none;
@@ -15,7 +15,9 @@ li {
   display: inline-block;
   margin: 0 7px;
 }
+
 #app {
+ 
  
   position:absolute;
   top: 5%;
@@ -27,6 +29,7 @@ li {
   -moz-osx-font-smoothing: grayscale;
   text-align:center;
   color:white;
+
  
 }
 #nav {
@@ -51,5 +54,3 @@ li {
   }
 }
 </style>
-
-
