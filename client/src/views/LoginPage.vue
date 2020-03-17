@@ -1,6 +1,6 @@
 <template>
   <div id="app2">
-   <img src="../assets/pushups.jpg">
+ 
     <article class="media">
       <figure class="media-left">
         <p class="image is-64x64">
@@ -109,7 +109,7 @@ article {
   padding-right: 2%;
   padding-top: 3%;
   left: 2%;
-  background-color: lightseagreen;
+  background-color: white;
   background: cover;
 }
 </style>
