@@ -6,7 +6,7 @@ const Users = [
 
 export let CurrentUser = null;
 
-export function SignUp(email, password) {
+export function Login(email, password) {
 
     const user = Users.find(x => x.Email == email);
     if(!user) throw Error('User not found');
