@@ -19,12 +19,12 @@
       <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
       <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
       <router-link to="/exercise" class="navbar-item" active-class="is-current">Exercise</router-link>
-      <router-link to="/Signin" class="navbar-item" active-class="is-current">Signin</router-link>
+      <router-link to="/Login" class="navbar-item" active-class="is-current">Login</router-link>
 
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More OptionsS
+          More Options
         </a>
 
         <div class="navbar-dropdown">

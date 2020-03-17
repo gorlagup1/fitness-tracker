@@ -1,56 +1,24 @@
 <template>
   <div id="app">
-<img src="../assets/fittness.jpg"/>
-       <router-view/>
-  </div>
+    <MyNav> </MyNav>
+<router-view/>
+  </div>   
 </template>
-<style lang="scss">
-
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 7px;
-}
-
-#app {
- 
- 
-  position:absolute;
-  top: 5%;
-   right:1%;
-   left: 1%;
-   bottom: 1%;
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align:center;
-  color:white;
-
- 
-}
-#nav {
-  position:fixed;
-  padding: 10px;
-  bottom: 94%;
-  left:39%;
+<script>
+import MyNav from "@/components/HelloWorld.vue"
+export default {
+  components: {
+    MyNav
+  }
   
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color:white;
-    &.router-link-exact-active {
-      color:rgb(223, 90, 1);
-    }
-  }
-  text-decoration: none;
-  a:hover{
-    position:relative;
-    font-size: 24px;
-    color:rgb(223, 90, 1);
-  }
 }
+</script>
+
+<style lang="scss"> 
+.navbar {
+  color:darkblue;
+  display:block;
+  background-color: darkorange;;
+}
+  
 </style>
