@@ -34,10 +34,10 @@ const routes = [
 },
 
 {
-  path:"/Exercise",
-  name: "Exercise",
+  path:"/LoginPage",
+  name: "LoginPage",
   component:()=>
-  import("../views/Exercise.vue")
+  import("../views/LoginPage.vue")
 },
 {
   path:"/Contact Me",
