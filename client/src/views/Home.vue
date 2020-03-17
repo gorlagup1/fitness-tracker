@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Fitness App Logo" src="../assets/logo.png" height="256" width="200">
+    
     <h1 class="title is-1">Welcome to Simple Fitness-Tracker App</h1>
     <HelloWorld msg="Balenced mind in the  balenced body?"/>
   </div>

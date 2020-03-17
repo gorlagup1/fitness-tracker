@@ -3,7 +3,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
-        <img src="../assets/gym.jpg" width="112" height="28">
+        <img src="../assets/logo1.png" width="112" height="28">
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" :class="{'is-active':isOpen}" @click="isOpen =! isOpen">
@@ -42,8 +42,8 @@
 
             <hr class="navbar-divider">
 
-            <router-link to="/" class="navbar-item" active-class="is-current">
-             More
+            <router-link to="/routine" class="navbar-item" active-class="is-current">
+                More
             </router-link>
             </div>
         </div>
@@ -52,9 +52,8 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <router-link to="/signup" class="button is-primary" active-class="is-current">Sign-up</router-link>
-                    <router-link to="/login" class="button is-light" active-class="is-current">Login</router-link>
-                    
+                    <router-link to="/signup" class="button is-primary" active-class="is-current">Sign up</router-link>
+                    <router-link to="/login" class="button is-light" active-class="is-current">Log in</router-link>
                 </div>
             </div>
         </div>
