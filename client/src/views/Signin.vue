@@ -1,6 +1,15 @@
 <template>
-    <article>
-        <div class="container" :class="('sign-up-active': signUp}">
+    <section>
+        <div id="nav">
+            <ul>
+                <li><router-link to="/">Home</router-link></li> 
+      <li><router-link to="/login">Sign&nbsp;up/Login</router-link></li> 
+      <li><router-link to="/Signin">Signin</router-link></li>  
+      <li><router-link to="/about">About</router-link></li>
+      </ul>
+    </div>
+       <article>
+        <div class="container" :class="{'sign-up-active': signUp}">
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-left">
@@ -29,10 +38,13 @@
         <input type="text" placeholder="Name"/>
         <input type="email" placeholder="Email"/>
         <input type="password" placeholder="Password"/>
+        <a> Forget Password?</a>
+        <router-link to ="/dash"><button>Signin</button></router-link>
         <button>Sign up</button>
         </form>
         </div>
-    </article>
+         </article>
+         </section>
 </template>
 
 <script>
@@ -40,12 +52,13 @@ export default {
     data:()=> {
         return{
             signUp:false
-        }
+        };
     }
     
-}
+};
 </script>
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 .container{
     position:relative;
     width:768px;
