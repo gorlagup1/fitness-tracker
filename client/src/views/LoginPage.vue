@@ -1,6 +1,6 @@
 <template>
   <div id="app2">
-    
+   <img src="../assets/pushups.jpg">
     <article class="media">
       <figure class="media-left">
         <p class="image is-64x64">
@@ -22,7 +22,7 @@
         <article class="media">
           <figure class="media-left">
             <p class="image is-48x48">
-              <img src="../assets/man.jpg" />
+              <img src="../assets/relazo.jpg" />
             </p>
           </figure>
           <div class="media-content">
@@ -33,7 +33,7 @@
                 “If you want something you’ve never had, you must be willing to
                 do something you’ve never done.”
                 <br />
-                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                <small hover><a>Like</a> · <a>Reply</a> · 2 hrs</small>
               </p>
             </div>
 
@@ -55,7 +55,7 @@
         <article class="media">
           <figure class="media-left">
             <p class="image is-48x48">
-              <img src="../assets/gym.jpg" />
+              <img src="../assets/rahul.jpg" />
             </p>
           </figure>
           <div class="media-content">
@@ -109,6 +109,8 @@ article {
   padding-right: 2%;
   padding-top: 3%;
   left: 2%;
+  background-color: lightseagreen;
+  background: cover;
 }
 </style>
 
