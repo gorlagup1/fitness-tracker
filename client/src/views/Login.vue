@@ -1,10 +1,10 @@
 <template>
 <div class="container">
     <div class="row">
-        </div>
     <div class="col-md-3">left</div>
     <div class="col-md-6">Mid</div>
     <div class="col-md-3">Right</div>
+    </div>
     </div>
     
 </template>
