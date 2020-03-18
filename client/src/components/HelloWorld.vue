@@ -35,6 +35,8 @@
           <hr class="navbar-divider">
           <router-link to="Calorie" class="navbar-item has-text-weight-bold">Calorie</router-link>
           <hr class="navbar-divider">
+          <router-link to="Logout" class="navbar-item has-text-weight-bold">Logout</router-link>
+          <hr class="navbar-divider">
         </div>
       </div>
       </div> 
@@ -43,7 +45,7 @@
          <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <router-link to="/SignUp" class="button is-primary has-text-weight-bold">Sign up</router-link>
+          <router-link to="/Sign-Up" class="button is-primary has-text-weight-bold">Sign up</router-link>
           <router-link to="/Login" class="button is-light has-text-weight-bold">Login</router-link>
         </div>
       </div>

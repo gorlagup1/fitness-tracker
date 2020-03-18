@@ -62,7 +62,14 @@ const routes = [
   name:"Signin",
   component:()=>
   import("../views/Signin.vue")
-}
+},
+{
+  path:"/Logout",
+  name:"Logout",
+  component:()=>
+  import("../views/Logout.vue")
+},
+
 ];
 
 const router = new VueRouter({

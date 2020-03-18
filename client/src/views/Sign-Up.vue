@@ -58,7 +58,7 @@
                             </span>
                             <span>
                               Sign-up with Facebook
-                              <href="www.facebook.com">
+              
                             </span>
                           </button>
                         </div>

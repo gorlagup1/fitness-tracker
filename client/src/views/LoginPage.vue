@@ -10,10 +10,13 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>Pavani</strong>
+            <strong>Romeo</strong>
             <br />
-            “Things may come to those who wait, but only the things left by
-            those who hustle.”
+            "This app is truly a lifesaver! I have an unusual manifestation of Temporal Lobe Epilepsy 
+            and must stick to a low carb diet. I recently had a back surgery that went horribly wrong.
+            I was forced to stay in bed for almost a month! I had to eat whatever was brought to me 
+            from the local restaurants and fast food joints. Prior to that, I had been on a strict 
+            KetoDiet for years! I gained 15lbs and felt terrible. 
             <br />
             <small><a>Like</a> · <a>Reply</a> · 1 hr</small>
           </p>
@@ -28,10 +31,15 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <strong>pavan</strong>
+                <strong>chilliene</strong>
                 <br />
-                “If you want something you’ve never had, you must be willing to
-                do something you’ve never done.”
+              "I’ve been on a calorie restricted diet for years making very slow progress on my weight loss goal.
+              I decided to start recording the time of my last food each day knowing that the time you eat may 
+              be as important as how much you eat. It quickly became a burden and a clutter on my calendar so 
+              I went looking for an intermittent fasting app. Since my original interest was just recording the
+              time of my last meal I wanted a simple low/no cost app. I found only one free app that didn’t have
+              in-app purchases to goof up features. Zero was that app plus it had the bonus of a 4.9 rating. ""
+                
                 <br />
                 <small hover><a>Like</a> · <a>Reply</a> · 2 hrs</small>
               </p>
