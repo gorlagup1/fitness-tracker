@@ -71,17 +71,22 @@
 </template>
 
 <script>
+import {SignUp1 } from "../models/Users";
 export default {
   data: () => ({
     username: "",
     email: "",
     password: ""
   }),
-  methods: {
-    clear () {
-      this.username = "";
-      this.email = "",
-      this.password = "";
+ methods: {
+    login(){
+      try{
+          SignUp(this.email, this.password);
+          //if no error display the log
+          this.$router.push('/SignUp1');
+      } catch (error){
+          this.error = error;
+      }
     }
   }
 }
