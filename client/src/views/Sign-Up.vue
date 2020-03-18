@@ -58,6 +58,7 @@
                             </span>
                             <span>
                               Sign-up with Facebook
+                              <href="www.facebook.com">
                             </span>
                           </button>
                         </div>
@@ -71,22 +72,17 @@
 </template>
 
 <script>
-import {SignUp1 } from "../models/Users";
 export default {
   data: () => ({
     username: "",
     email: "",
     password: ""
   }),
- methods: {
-    login(){
-      try{
-          SignUp(this.email, this.password);
-          //if no error display the log
-          this.$router.push('/SignUp1');
-      } catch (error){
-          this.error = error;
-      }
+  methods: {
+    clear () {
+      this.username = "";
+      this.email = "",
+      this.password = "";
     }
   }
 }

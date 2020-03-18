@@ -37,6 +37,13 @@ const routes = [
   import("../views/Exercise.vue")
 
 },
+{
+  path:"/Calorie",
+  name:"Calorie",
+  component:()=>
+  import("../views/Calorie.vue")
+
+},
 
 {
   path:"/LoginPage",
