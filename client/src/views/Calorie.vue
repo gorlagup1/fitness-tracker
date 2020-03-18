@@ -1,6 +1,6 @@
 <template>
   <div class="calorie">
-    <section class="hero is-danger is-bold">
+    <section class="hero is-bold">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
@@ -22,7 +22,7 @@
                         <span class="icon is-small is-left">
                         <i class="fas fa-apple-alt"></i>
                         </span>
-                        <p class="help is-dark">Enter the name of the food or drink</p>
+                        <p class="help ">Enter the name of the food or drink</p>
                     </div>
                 </div>
 
@@ -33,46 +33,37 @@
                         <span class="icon is-small is-left">
                             <i class="fas fa-fire"></i>
                         </span>
-                        <p class="help is-dark">Enter the calories</p>
+                        <p class="help ">Enter the calories</p>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Protein</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="numver" name="protein" placeholder="0" v-model.number="newProtein">
-                        <span class="icon is-small is-left">
+                        <input class="input" type="numver" name="protein" placeholder="" v-model.number="newProtein">
+                        <span class="icon is-left">
                             <i class="fas fa-drumstick-bite"></i>
                         </span>
-                        <p class="help is-dark">Enter the protein content in grams</p>
+                        <p class="help">Enter the protein content in grams</p>
                     </div>
                 </div>
 
-                <div class="field">
-                    <label class="label">Carbs</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="number" name="carbs" placeholder="0" v-model.number="newCarbs">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-bread-slice"></i>
-                        </span>
-                        <p class="help is-dark">Enter the carbs content in grams</p>
-                    </div>
-                </div>
+               
 
                 <div class="field">
                     <label class="label">Fat</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="number" name="fat" placeholder="0" v-model.number="newFat">
+                        <input class="input" type="number" name="fat" placeholder="" v-model.number="newFat">
                         <span class="icon is-small is-left">
                             <i class="fas fa-bacon"></i>
                         </span>
-                        <p class="help is-dark">Enter the fat content in grams</p>
+                        <p class="help ">Enter the fat content in grams</p>
                     </div>
                 </div>
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-danger" @click="add();addcalorie();addprotein();addcarbs();addfat()">Submit</button>
+                        <button class="button is-danger" @click="add();addcalorie();addprotein();addfat()">Submit</button>
                     </div>
                     <div class="control">
                         <button class="button is-danger is-light">Cancel</button>
@@ -98,12 +89,7 @@
                         <p class="title">{{proteinCount}}</p>
                         </div>
                     </div>
-                    <div class="level-item has-text-centered">
-                        <div>
-                        <p class="heading">Carbs</p>
-                        <p class="title">{{carbsCount}}</p>
-                        </div>
-                    </div>
+                    
                     <div class="level-item has-text-centered">
                         <div>
                         <p class="heading">Fat</p>
@@ -117,20 +103,20 @@
         <table class="table is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
                 <tr>
-                    <th>Name of Food</th>
-                    <th>Calories</th>
-                    <th>Protein</th>
-                    <th>Carbs</th>
+                    <th> Name of Food</th>
+                    <th> Calories</th>
+                    <th> Protein</th>
+                   
                     <th>Fat</th>
                 </tr>
             </thead>
             <tbody>
-                <tr r v-for="x in todos" :key="x.name">
-                    <td>{{x.name}}</td>
-                    <td>{{x.calorie}}</td>
-                    <td>{{x.protein}}</td>
-                    <td>{{x.carbs}}</td>
-                    <td>{{x.fat}}</td>
+                <tr r v-for="i in todos" :key="i.name">
+                    <td>{{i.name}}</td>
+                    <td>{{i.calorie}}</td>
+                    <td>{{i.protein}}</td>
+                  
+                    <td>{{i.fat}}</td>
                 </tr>
             </tbody>
             <tfoot>
