@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
       <section class="hero is-info is-bold is-fullheight">
-           <div class="hero-body" style="display: inline-block;">
+           <div class="hero-body" style="display: inline-block;color:red">
             <div class="title has-text-centered">Sign-Up</div>
             <div class="container level-item">
                 <div class="box">
@@ -89,5 +89,11 @@ export default {
 </script>
 
 <style>
-
+.signup{
+   background-image: url("../assets/photo.jpg");
+  margin:0%;
+  padding:2.3%;
+  background:cover;
+  color:black;
+}
 </style>

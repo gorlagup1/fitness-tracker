@@ -7,7 +7,7 @@
 <script>
 import MyNav from "@/components/HelloWorld.vue"
 export default {
-  components: {
+  components: { 
     MyNav
   }
   
@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss"> 
 .navbar {
-  color:darkblue;
+  
   display:block;
   background-color: darkorange;;
 }

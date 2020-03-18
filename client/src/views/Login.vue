@@ -54,4 +54,15 @@ export default {
 </script>
 
 <style>
+.controler{
+   background-image: url("../assets/photo.jpg");
+  margin:0%;
+  padding:0%;
+  background:cover;
+  color:black;
+  left:0%;
+  right:0%;
+  top:0%;
+
+}
 </style>

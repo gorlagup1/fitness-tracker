@@ -1,7 +1,7 @@
 <template>
   <Section class="container">
     <div class="hero">
-    <h1 class="main" style="color:blue;">
+    <h1 class="main" >
       ABOUT My Simple Fittness Tracker App</h1>
     <p> My Simple Fitteness Tracker App provides powerful tools <br>
     that make it easier for anyone to live a <br>
@@ -16,7 +16,7 @@
 <style>
 .hero{
   text-Align:center;
-  color:red;
+ 
 
 
 }
