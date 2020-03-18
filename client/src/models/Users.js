@@ -12,5 +12,5 @@ export function Login(email, password) {
     if(!user) throw Error('User not found');
     if(user.Password != password) throw Error('Wrong Password');   
 
-    return CurrentUser = user;
+    return CurrentUser = user; 
 }

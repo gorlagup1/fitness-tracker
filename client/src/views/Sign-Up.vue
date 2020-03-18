@@ -1,5 +1,5 @@
 <template>
-  <div class="signup">
+  <div class="signup"> 
       <section class="hero is-info is-bold is-fullheight">
            <div class="hero-body" style="display: inline-block;color:red">
             <div class="title has-text-centered">Sign-Up</div>

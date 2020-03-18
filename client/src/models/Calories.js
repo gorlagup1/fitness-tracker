@@ -16,7 +16,7 @@ export function add() {
         fat: this.newFat 
       }
     )
-};
+}; 
 export function addcalorie() {
     this.calorieCount += this.newCalorie;
 };

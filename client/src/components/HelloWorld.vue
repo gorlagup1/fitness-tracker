@@ -6,7 +6,7 @@
   <figure class="image is-128x128">
     <img class="is-rounded" src="../assets/logo1.png">
     </figure>
-</div>
+</div> 
   <div :class="{ 'is-active':isOpen }" class="navbar-menu">
 
     <div class="navbar-start">

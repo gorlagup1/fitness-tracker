@@ -95,7 +95,7 @@
             class="textarea"
             placeholder="Add a comment..">
             </textarea>
-          </p>
+          </p> 
          
         </div>
         <div class="field">
@@ -117,7 +117,7 @@ article {
   padding-right: 2%;
   padding-top: 3%;
   left: 2%;
-  background-color: white;
+  background-color: red;
   background: cover;
 }
 </style>

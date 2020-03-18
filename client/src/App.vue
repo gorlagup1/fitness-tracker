@@ -7,7 +7,7 @@
 <script>
 import MyNav from "@/components/HelloWorld.vue"
 export default {
-  components: { 
+  components: {  
     MyNav
   }
   

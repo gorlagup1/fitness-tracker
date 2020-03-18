@@ -13,6 +13,6 @@ export const Running = async (exercise)=>{
     return parseResponse;
 };
 export default{
-    postExercise,
+    postExercise, 
 };
     

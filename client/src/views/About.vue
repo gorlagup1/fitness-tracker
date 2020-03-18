@@ -1,5 +1,5 @@
 <template>
-  <Section class="container">
+  <Section class="container"> 
     <div class="hero">
     <h1 class="main" >
       ABOUT My Simple Fittness Tracker App</h1>

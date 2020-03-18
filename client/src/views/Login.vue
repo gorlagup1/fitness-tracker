@@ -51,7 +51,7 @@ export default {
     }
   }
 }
-</script>
+</script> 
 
 <style>
 .controler{
