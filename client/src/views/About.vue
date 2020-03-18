@@ -16,4 +16,7 @@
 <style>
 .hero{
   text-Align:center;
+  color:red;
+
+
 }

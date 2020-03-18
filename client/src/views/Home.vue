@@ -36,12 +36,14 @@
 
 <style >
   .hero { background-color:  #08b6ad;
- font-weight: bold;
+ font-weight:inherit;
  font-size: 20px;
- text-align: center;
- text-emphasis-color: red;
+ text-align: left;
+ font-display: left;
+ color: black;
   background-image: url("../assets/photo.jpg");
   margin:0%;
-  padding:0%;
+  padding:2.3%;
+  background:cover;
 }
 </style>

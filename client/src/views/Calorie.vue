@@ -157,7 +157,10 @@ export default {
 
 <style>
 .hero-body{
-    background-color: lightsalmon;
+   
+  margin:0%;
+  padding:2.3%;
+  background:cover;
     background: cover;
 }
 
