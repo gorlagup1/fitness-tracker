@@ -2,7 +2,7 @@
   <Section class="container">
     <div class="hero">
     <h1 class="main" style="color:blue;">
-      This is an about page</h1>
+      ABOUT My Simple Fittness Tracker App</h1>
     <p> My Simple Fitteness Tracker App provides powerful tools <br>
     that make it easier for anyone to live a <br>
     healthier life by tracking their meals and physical activit.<br>
