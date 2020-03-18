@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style>
-navbar {
+.navbar-brand {
     color: #08b6ad;
   }
 </style>

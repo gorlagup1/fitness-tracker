@@ -1,5 +1,6 @@
 <template>
   <div class="calorie">
+    
     <section class="hero is-bold">
         <div class="hero-body">
             <div class="container">
@@ -155,4 +156,9 @@ export default {
 </script>
 
 <style>
+.hero-body{
+    background-color: lightsalmon;
+    background: cover;
+}
+
 </style>

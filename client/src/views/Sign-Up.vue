@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
       <section class="hero is-info is-bold is-fullheight">
-        <div class="hero-body" style="display: inline-block;">
+           <div class="hero-body" style="display: inline-block;">
             <div class="title has-text-centered">Sign-Up</div>
             <div class="container level-item">
                 <div class="box">
@@ -89,4 +89,5 @@ export default {
 </script>
 
 <style>
+
 </style>

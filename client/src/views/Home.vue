@@ -6,7 +6,7 @@
         <div class="column">
           <div class="columns is-mobile">
             <div class="column">
-              <img src="../assets/photo.jpg" width ="1700" height="1400"/>
+              
             </div>
             <div class="column">
               <h2 class="app is-size-3 has-text-centered "> Welcome to your workout station and fill your day with full of engerytic !</h2>
@@ -36,6 +36,12 @@
 
 <style >
   .hero { background-color:  #08b6ad;
-  background: cover;
+ font-weight: bold;
+ font-size: 20px;
+ text-align: center;
+ text-emphasis-color: red;
+  background-image: url("../assets/photo.jpg");
+  margin:0%;
+  padding:0%;
 }
 </style>
