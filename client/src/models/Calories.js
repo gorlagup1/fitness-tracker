@@ -1,4 +1,4 @@
-import {CurrentUser} from "./Users";
+
 import myFetch from "./myFetch";
 export const todos = [
     {

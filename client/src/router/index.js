@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import {CurrentUser} from '../models/Users';
 
 Vue.use(VueRouter);
 const routes = [
@@ -77,6 +78,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
+router.beforeEach(( to,from,next)=>{
+  if(to.meta.isSecret && !CurrentUser) next('/login');
+  else next();
+});
 
 
-export default router;      
+export default router      
