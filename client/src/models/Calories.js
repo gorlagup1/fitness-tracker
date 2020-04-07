@@ -1,5 +1,3 @@
-
-import myFetch from "./myFetch";
 export const todos = [
     {
         name: "Sample",
@@ -28,12 +26,4 @@ export function addprotein() {
 
 export function addfat() {
     this.fatCount += this.newFat;
-
 };
-export function Init(){
-    myFetch('http://localhost:3000/game')
-        .then(x=> { 
-            State = x;
-            console.log(x);
-        });
-    }
