@@ -1,9 +1,9 @@
 const express = require('express');
 const users = require('../models/Users');
 const router = express.Router();
-router.post('/',(req,res)=>{
+router.post("/login",(req,res)=>{
     try{
-        const user = users.Login(req.body.username, req.body.contactno, req.body.password);
+        const user = users.Login(req.body.username, req.body.password);
         res.send({...user, Password:underfined});
     }catch (error){
         res.status(401).send({message:error.message});
