@@ -8,5 +8,7 @@ module.exports={
         if(!user) throw Error('User not found');
         if(user.Password != password) throw Error('wrong Password');
         return user;
-    }
+    },
+    Get: userid => Users[userid]
+    
 }

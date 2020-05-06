@@ -1,5 +1,8 @@
 const express = require = require('express');
 const path = require('path');
+
+const photosController = require('./controllers/photos');
+const profileController = require('./controllers/profile');
 const aboutController = require('./controller/about');
 const exerciseController = require('./controller/exercise');
 const foodListController = require('./controller/foodList');
@@ -16,14 +19,20 @@ app.use(function(req,res, next){
     next();
 });
 app.user(function(req, res, next){
-    const arr = (req.headers/.authorization || "").split(" ");
+    const arr = (req.headers.authorization || "").split(" ");
     if(arr.length > 1 && arr[1] !=null){
         req.userId = +arr[1];
     }
     next();
 });
+
+
 app.use(express.json())
 .use(express.urlencoded({extended: true }))
+.use(excpress.static(_dirname + '/../client/dist'))
+
+.use('/',photosController)
+.use('/profile', profileController)
 .use('/about', aboutController)
 .use('/exercise', exerciseController)
 .use('/users', usersController)
@@ -32,8 +41,10 @@ app.use(express.json())
 .use('/login', loginController)
 .use('/food', foodListController)
 .use('/about', aboutController)
+
+
 .use((err,req,res,next)=>{
-    console.error(err);
+    console.log(err);
     const errorCode = err.code || 500;
     res.status(errorCode).send({message:err.message });
 })
