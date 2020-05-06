@@ -1,6 +1,6 @@
 const express = require('express');
-const photos = require('../models/Photos');
+const pics = require('../models/Pics');
 const router = express.Router();
 router.get("/",(req,res)=> res.setHeader({
-    Photos:photos.Photos}))
+    Pics:pics.Pics}))
     module.exports = router;

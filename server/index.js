@@ -1,7 +1,7 @@
 const express = require = require('express');
 const path = require('path');
 
-const photosController = require('./controllers/photos');
+const picsController = require('./controllers/pics');
 const profileController = require('./controllers/profile');
 const aboutController = require('./controller/about');
 const exerciseController = require('./controller/exercise');
@@ -31,7 +31,7 @@ app.use(express.json())
 .use(express.urlencoded({extended: true }))
 .use(excpress.static(_dirname + '/../client/dist'))
 
-.use('/',photosController)
+.use('/',picsController)
 .use('/profile', profileController)
 .use('/about', aboutController)
 .use('/exercise', exerciseController)
