@@ -1,7 +1,6 @@
 const express = require = require('express');
 const path = require('path');
 
-const picsController = require('./controllers/pics');
 const profileController = require('./controllers/profile');
 const aboutController = require('./controller/about');
 const exerciseController = require('./controller/exercise');
@@ -18,7 +17,7 @@ app.use(function(req,res, next){
     res.header("Acess-Control-Allow-Headers","Origin, x-Requeted-With, Content-Type, Accept, Authorization");
     next();
 });
-app.user(function(req, res, next){
+app.use(function(req, res, next){
     const arr = (req.headers.authorization || "").split(" ");
     if(arr.length > 1 && arr[1] !=null){
         req.userId = +arr[1];
