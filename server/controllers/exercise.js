@@ -5,7 +5,7 @@ const users = require('../models/users');
 const app = express.Router();
 router
 .get("/",(req,res)=> res.send({
-    Exercise: Exercise.exerciseList
+    Exercise: Exercise.exercise
 }))
 .post('/addExercise',(req,res)=>res.send(
     Exercise.addExercise(req.body.newExercise)
