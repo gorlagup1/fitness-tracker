@@ -8,7 +8,7 @@ const loginController = require('./controllers/login');
 const profileController = require('./controllers/profile');
 const aboutController = require('./controllers/about');
 const calorieController = require('./controllers/calorie');
-const foodListController = require('./controllers/food');
+
 
 const app = express();
 const port = 3000;
@@ -31,23 +31,25 @@ app
     .use(express.json())
     .use(express.urlencoded({ extended: true }))
     .use(express.static(__dirname + '/../client/dist'))
-    
+    .get('/',(req,res)=>res.send('staystafe and healthy'))
     .use('/', picsController)
     .use('/users', usersController)
     .use('/exercise', exerciseController)
     .use('/profile', profileController)
-    .use('/social', loginController)
+    .use('/login', loginController)
+    .use('/about', aboutController)
     .use('/calorie', calorieController)
-    .use('/liquid', foodListController)
+ 
+   
 
     /*.use((req, res) => {
         const homePath = path.join(__dirname , '/../dist/index.html');
         res.sendFile(homePath);
     }) */
     .use((err, req, res, next) => {
-        console.log(err);
+        console.error(err);
         const errorCode = err.code || 500;
-        res.status(errorCode).send({ message: err.message})
+        res.status(errorCode).send({ message: err.message});
     })
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
