@@ -1,51 +1,54 @@
-const express = require = require('express');
+const express = require('express');
 const path = require('path');
 
+const picsController = require('./controllers/pics');
+const usersController = require('./controllers/users');
+const exerciseController = require('./controllers/exercise');
+const loginController = require('./controllers/login');
 const profileController = require('./controllers/profile');
-const aboutController = require('./controller/about');
-const exerciseController = require('./controller/exercise');
-const foodListController = require('./controller/foodList');
-const loginController = require('./controller/login');
-const weightController = require('./controller/users');
-const meetingBoardController = require('./controller/meetingBoard');
-const usersController = require('./controller/users');
+const aboutController = require('./controllers/about');
+const calorieController = require('./controllers/calorie');
+const foodListController = require('./controllers/food');
 
 const app = express();
-const port = 400;
-app.use(function(req,res, next){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Acess-Control-Allow-Headers","Origin, x-Requeted-With, Content-Type, Accept, Authorization");
+const port = 3000;
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
 });
-app.use(function(req, res, next){
+
+app.use(function(req, res, next) {
     const arr = (req.headers.authorization || "").split(" ");
-    if(arr.length > 1 && arr[1] !=null){
+    if(arr.length > 1 && arr[1] != null){
         req.userId = +arr[1];
     }
     next();
 });
 
+app
+    .use(express.json())
+    .use(express.urlencoded({ extended: true }))
+    .use(express.static(__dirname + '/../client/dist'))
+    
+    .use('/', picsController)
+    .use('/users', usersController)
+    .use('/exercise', exerciseController)
+    .use('/profile', profileController)
+    .use('/social', loginController)
+    .use('/calorie', calorieController)
+    .use('/liquid', foodListController)
 
-app.use(express.json())
-.use(express.urlencoded({extended: true }))
-.use(excpress.static(_dirname + '/../client/dist'))
+    /*.use((req, res) => {
+        const homePath = path.join(__dirname , '/../dist/index.html');
+        res.sendFile(homePath);
+    }) */
+    .use((err, req, res, next) => {
+        console.log(err);
+        const errorCode = err.code || 500;
+        res.status(errorCode).send({ message: err.message})
+    })
 
-.use('/',picsController)
-.use('/profile', profileController)
-.use('/about', aboutController)
-.use('/exercise', exerciseController)
-.use('/users', usersController)
-.use('/meetingboard', meetingboardController)
-.use('/weight', weightController)
-.use('/login', loginController)
-.use('/food', foodListController)
-.use('/about', aboutController)
-
-
-.use((err,req,res,next)=>{
-    console.log(err);
-    const errorCode = err.code || 500;
-    res.status(errorCode).send({message:err.message });
-})
-app.listen(port, () => console.log('Listening at http://localhost:$(port}'));
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
