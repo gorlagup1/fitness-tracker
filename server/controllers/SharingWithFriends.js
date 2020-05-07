@@ -93,7 +93,7 @@ class sharefriends {
           }
         
           getsearch(req){
-            search = (text$: Observable<string>) =>
+            search = (text$: Information<string>)=>
             text$.pipe(
               debounceTime(300),
               distinctUntilChanged(),
