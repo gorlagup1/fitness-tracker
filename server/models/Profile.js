@@ -73,7 +73,7 @@ function addExercise(userid, date, type, duration, calories){
     return true;
 }
 module.exports = {
-    Profile, Goals, Exercise,
+    Profile, calorie, Exercise,
     editProfile, editGoals, addExercise
 }
 

@@ -19,7 +19,7 @@ class sharefriends {
             });
           }
         
-          addFriend(req) {
+          addshareFriend(req) {
             let body;
             body = qs.parse(req.body);
             let self = this;
@@ -34,7 +34,7 @@ class sharefriends {
         
                   req.body.isLogin = false;
                   sharefriends.push(req.body);
-                  fs.writeFile(this.path, JSON.stringify(friends), 'utf8', (err, success) => {
+                  fs.writeFile(this.path, JSON.stringify(sharefriends), 'utf8', (err, success) => {
                     if (err) return reject(err);
                     return resolve({ status: true, message: 'Friend added successfully' });
                   });
@@ -93,7 +93,7 @@ class sharefriends {
           }
         
           getsearch(req){
-            search = (text$: Information<string>)=>
+           
             text$.pipe(
               debounceTime(300),
               distinctUntilChanged(),
