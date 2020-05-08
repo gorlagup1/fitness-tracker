@@ -71,7 +71,7 @@
 </template>
 
 <script>
-
+import { Sign } from "../models/Users";
 export default {
   data: () => ({
     username: "",
@@ -79,13 +79,18 @@ export default {
     password: ""
   }),
   methods: {
-    clear () {
-      this.username = "";
-      this.email = "",
-      this.password = "";
+    sign () {
+     try{
+       sign(this.email, this.password);
+       this.$router.push('/Exercise');
+     }catch (error){
+       this.error = error;
+
+     }
+     }
     }
   }
-}
+
 </script>
 
 <style>
