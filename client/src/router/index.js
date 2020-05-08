@@ -1,16 +1,17 @@
-import Vue from 'vue';
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import {CurrentUser} from '../models/Users';
-import Calorie from '../views/Calorie.vue';
-import ContactMe from '../views/ContactMe.vue';
-import Exercise from '../views/Exercise.vue';
-import Login from '../views/Login.vue';
-import LoginPage from '../views/LoginPage.vue';
-import Logout from '../views/Logout.vue';
-import Profile from '../views/Profile.vue';
-import Register from '../views/Register.vue';
-import Signup from '../views/Signup.vue';
+import Vue from 'vue'
+import VueRouter from "vue-router"
+import Home from "../views/Home.vue"
+import {CurrentUser} from '../models/Users'
+import Signup from '../views/Signup.vue'
+import Calorie from '../views/Calorie.vue'
+import ContactMe from '../views/ContactMe.vue'
+import Exercise from '../views/Exercise.vue'
+import Login from '../views/Login.vue'
+import LoginPage from '../views/LoginPage.vue'
+import Logout from '../views/Logout.vue'
+import Profile from '../views/Profile.vue'
+import Register from '../views/Register.vue'
+
 
 Vue.use(VueRouter);
 const routes = [
@@ -35,7 +36,7 @@ const routes = [
   import("../views/Login.vue")
 },
 {
-  path:"/Signup",
+  path:"/signup",
   name:"Signup",
   component:()=>
   import("../views/Signup.vue")
@@ -80,7 +81,7 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
-});
+})
 router.beforeEach(( to,from,next)=>{
   if(to.meta.isSecret && !CurrentUser) next('/login');
   else next();
