@@ -1,100 +1,114 @@
 <template>
-  <div class="signup">
-      <section class="hero is-info is-bold is-fullheight">
-        <div class="hero-body" style="display: inline-block;">
-            <div class="title has-text-centered">Sign-Up</div>
-            <div class="container level-item">
-                <div class="box">
-                      
-                      <div class="field">
-                        <label class="label">Username</label>
-                        <div class="control has-icons-left has-icons-right">
-                          <input class="input" type="text" v-model="username">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-user"></i>
-                          </span>
-                        </div>
-                        <p class="help is-dark">Enter an username</p>
-                      </div>
-
-                      <div class="field">
-                        <label class="label">Password</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input" type="password" v-model="password">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                            <p class="help is-dark">Enter a password</p>
-                        </div>
-                    </div>
-                      
-                      <div class="field">
-                        <label class="label">Email</label>
-                        <div class="control has-icons-left">
-                          <input class="input" type="email" v-model="email">
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                          </span>
-                        </div>
-                        <p class="help is-dark">Enter an email</p>
-                      </div>
-                      
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-info" type="submit">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button is-link is-light" @click="clear">clear</button>
-                        </div>
-                      </div>
-
-                      <hr>
-
-                      <div class="field">
-                        <div class="control has-icon-left">
-                          <button class="button is-link">
-                            <span class="icon is-small is-left">
-                              <i class="fab fa-facebook-square"></i>
-                            </span>
-                            <span>
-                              Sign-up with Facebook
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-
-                    </div>
-                </div>
-            </div>
-    </section>
+  <div class="container">
+    <div id = "progress"></div>
+    <div id = "register">
+      <div id = "inputContainer">
+        <form>
+          <input id="inputField" type="inputType" v-model="inputValue" ref="registerinput" required />>
+          <label id="inputLabel">{{ inputLabel }}</label>
+        </form>
+        <div id="inputProgress"></div>
+</div>
+    </div>
   </div>
 </template>
 
 <script>
-import { Sign } from "../models/Users";
 export default {
-  data: () => ({
-    username: "",
-    email: "",
-    password: ""
-  }),
-  methods: {
-    sign () {
-     try{
-       sign(this.email, this.password);
-       this.$router.push('/Exercise');
-     }catch (error){
-       this.error = error;
-
-     }
-     }
+ 
+    data:() => {
+      return {
+      position: 0,
+      inputLabel:'',
+      inputType:'text',
+      inputValue:'',
+      registerSteps: [
+        {
+          label:" what's you first name ?",
+          type:"text",
+          value:"",
+          pattern:/.+/
+        },
+        {
+          label:"what's your email?",
+          type:"text",
+          value:"",
+          pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        },
+        {
+          label: "create your password",
+          type="password",
+          value:"",
+          pattern:/.+/
+        }
+      ]
+      }
+      }
+    },
+    methods: {
+      setStep(){
+        this.inputLabel = this.registerSteps[this.position].label;
+        this.inputType=this.registersteps[this.position].type;
+        this.inputValue=this.registerSteps[this.position].value;
+        this.$refs.registerinput.focus();
+      
+      }
+    },
+    mounted(){
+      this.setStep();
+      
     }
-  }
-
+        
 </script>
+   <style lang="scss" scoped>
+   .container{
+     position:relative;
+     font-family:'Noto Sans', sans-serif;
+     font-size: 1 rem;
+     color: #333;
+     width: 100%;
+     min-height:100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: radial-gradient(#009345,#106B4E);
+     #progress{
+       position:absolute;
+       top:0;
+       left:0;
+       left:0;
+       width:25%;
+       height:100vh;
+       background-color:#106B4E;
+       transition:width .8s ease-in-out;
+     }
+     }
+     #register{
+       position:relative;
+       width:480px;
+       height:80px;
+       background-color:0 15px 30px rgba(0,0,0,.2),
+                        0 10px 10px rgba(0,0,0,.2);
 
-<style>
-</style>
+     }
+     #inputContainer{
+       position:relative;
+       padding:30px 20px 20px 20px;
+       margin-right:60px;
 
-    ©
+       input{
+         position:relative;
+         width:100%;
+         font-size:1.35rem;
+         font-weight:bold;
+         outline:0;
+         background:transparent;
+         box-shadow:none;
+         border:none;
+       }
+       }
+    
+   </style>
+                
 
+                   
