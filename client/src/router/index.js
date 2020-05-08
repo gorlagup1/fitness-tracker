@@ -26,10 +26,10 @@ const routes = [
   import("../views/Login.vue")
 },
 {
-  path:"/Sign-Up",
-  name:"Sign-Up",
+  path:"/SignUp",
+  name:"SignUp",
   component:()=>
-  import("../views/Sign-Up.vue")
+  import("../views/SignUp.vue")
 },
 {
   path:"/Exercise",
@@ -57,12 +57,6 @@ const routes = [
   name:"Contact Me",
   component:()=>
   import("../views/Contact Me.vue")
-},
-{
-  path:"/Signin",
-  name:"Signin",
-  component:()=>
-  import("../views/Signin.vue")
 },
 {
   path:"/Logout",

@@ -6,7 +6,6 @@ const Profile = [
         Image: "http://cs.newpaltz.edu/~cloren/assets/thundersome.jpg",
         Age: 18,
         Height:189,
-        Weight:320,
         Sex:"Male",
         Description: " Member of pubg game"},
         {
@@ -16,23 +15,22 @@ const Profile = [
             Image: "http://cs.newpaltz.edu/~cloren/assets/oman.png",
             Age:56,
             Height:160,
-            Weight:200,
             Sex:"Female",
             Description: "From glaxy 69s group"
         }
     ];
     const Goals = [
         {
-            UserId: 0,
+            userId: 0,
             Focus: "Strength Training",
             Goal:1000,
-            Weight:200
+            
         },
         {
-            UserId: 1,
+            userId: 1,
             Focus: "Postive Feelings",
             Goal:2000,
-            Weight:160
+            
         }
     ];
     const Exercise = [
@@ -51,20 +49,18 @@ const Profile = [
     ]
         }
     ];
-function editProfile(userid, newAge, newWeight, newHeight, newDescription){
+function GettUserId(userid, newAge,  newHeight, newDescription){
     const user = Profile.find(x=> x.UserId == userid);
     console.log(user);
     user.Height = newHeight;
     user.Age = newAge;
-    user.Weight = newWeight;
     user.Description = newDescription;
     return user;
 };
-function editGoals(userid, newFocus, newStep, newWeight){
+function editGoals(userid, newFocus, newStep){
     const user = Goals.find(x=> x.UserId == userid);
     user.Focus = newFocus;
     user.StepGoal = newStep;
-    user.WeightGoal = newWeight;
     return user;
 };
 function addExercise(userid, date, type, duration, calories){
