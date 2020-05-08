@@ -2,9 +2,12 @@
   <div class="container">
     <div id = "progress"></div>
     <div id = "register">
-      <div id = "inputContainer">
+      <i v-if="position === 0 class='previousButton fas fa-user">/i>
+      <i v-else class="previousButton fas fa-arrow-left"></i>
+      <i class="forwardBuutton fas fa-arrow-right"></i>
+      <div id = "inputContainer" :class="{'showContainer':showContainer}>
         <form>
-          <input id="inputField" type="inputType" v-model="inputValue" ref="registerinput" required />>
+          <input id="inputField" :type="inputType" v-model="inputValue" ref="registerinput" required />>
           <label id="inputLabel">{{ inputLabel }}</label>
         </form>
         <div id="inputProgress"></div>
@@ -22,6 +25,7 @@ export default {
       inputLabel:'',
       inputType:'text',
       inputValue:'',
+      showContainer:false,
       registerSteps: [
         {
           label:" what's you first name ?",
@@ -43,7 +47,7 @@ export default {
         }
       ]
       }
-      }
+      
     },
     methods: {
       setStep(){
@@ -51,12 +55,18 @@ export default {
         this.inputType=this.registersteps[this.position].type;
         this.inputValue=this.registerSteps[this.position].value;
         this.$refs.registerinput.focus();
+        this.showStep();
       
-      }
+      },
+  showStep(){
+    setTimeout(() => {
+this.showContainer = true;
+    },100)
+  }
     },
     mounted(){
       this.setStep();
-      
+
     }
         
 </script>
@@ -91,10 +101,25 @@ export default {
                         0 10px 10px rgba(0,0,0,.2);
 
      }
+}
+     .previousButton{
+       position:absolute;
+       left:30px;
+       top:12px;
+       font-size:1rem;
+       color:#9e9e9e;
+       cursor:pointer;
+       z-index:2;
+       &:hover{
+         color:#009
+       }
+     }
      #inputContainer{
        position:relative;
        padding:30px 20px 20px 20px;
        margin-right:60px;
+       opacity:1;
+       transition: opacity .3s ease-in-out;
 
        input{
          position:relative;
@@ -105,8 +130,37 @@ export default {
          background:transparent;
          box-shadow:none;
          border:none;
+         &:valid + #inputLabel1{
+           top:3px;
+           left:42px;
+           font-size:.7rem;
+           font-weight:normal;
+           color:#999;
+         }
        }
        }
+       #inputLabel{
+         position:absolute;
+         top:32px;
+         left:20px;
+         font-size:1.35rem;
+
+         pointer-events:none;
+         transition:.2s ease-in-out;
+       }
+       #inputProgress{
+         width:0;
+         border-bottom:6px solid #106B4E;
+         transition:width .6s ease-in-out;
+       }
+       .showContainer{
+         opacity:1 !important;
+         #inputProgress{
+           width:100%;
+         }
+       }
+
+  
     
    </style>
                 
