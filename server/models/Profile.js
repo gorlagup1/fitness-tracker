@@ -19,7 +19,7 @@ const Profile = [
             Description: "From glaxy 69s group"
         }
     ];
-    const Goals = [
+    const Calorie= [
         {
             userId: 0,
             Focus: "Strength Training",
@@ -49,7 +49,7 @@ const Profile = [
     ]
         }
     ];
-function GettUserId(userid, newAge,  newHeight, newDescription){
+function editProfile(userid, newAge,  newHeight, newDescription){
     const user = Profile.find(x=> x.UserId == userid);
     console.log(user);
     user.Height = newHeight;
@@ -57,8 +57,8 @@ function GettUserId(userid, newAge,  newHeight, newDescription){
     user.Description = newDescription;
     return user;
 };
-function editGoals(userid, newFocus, newStep){
-    const user = Goals.find(x=> x.UserId == userid);
+function editCalorie(userid, newFocus, newStep){
+    const user = Calorie.find(x=> x.UserId == userid);
     user.Focus = newFocus;
     user.StepGoal = newStep;
     return user;
@@ -67,6 +67,10 @@ function addExercise(userid, date, type, duration, calories){
     const user = Exercise.find(x=> x.UserId == userid);
     user.Exercise.push([date, type, duration, calories]);
     return true;
+}
+function getuser(token){
+    return Profile.fintIndex(x=> x.UserId == token)
+// getuser help us to get the current index with the help of token and we can get to know about userId//
 }
 module.exports = {
     Profile, calorie, Exercise,
