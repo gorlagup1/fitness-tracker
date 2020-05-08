@@ -1,16 +1,9 @@
-const Users = [
-    { Name: 'Pavani', Password: '2020', Email: 'gorlagup1@hawkmail.newpaltz.edu' },
-    { Name: 'Pavan', Password: '5780', Email: '547gpavani@newpaltz.edu' },
-    
-];
+import myFetch from "./myFetch";
 
-export let CurrentUser = null;
+export let CurrentUser =  null;
 
-export function Login(email, password) {
+export async function Login(username, password) {
+    const user = await myFetch('/users/login', { username, password }) ;
 
-    const user = Users.find(x => x.Email == email);
-    if(!user) throw Error('User not found');
-    if(user.Password != password) throw Error('Wrong Password');   
-
-    return CurrentUser = user; 
+    return CurrentUser = user;
 }

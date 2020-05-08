@@ -10,7 +10,7 @@ import Login from '../views/Login.vue'
 import LoginPage from '../views/LoginPage.vue'
 import Logout from '../views/Logout.vue'
 import Profile from '../views/Profile.vue'
-import Register from '../views/Register.vue'
+
 
 
 Vue.use(VueRouter);
