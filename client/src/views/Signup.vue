@@ -41,10 +41,10 @@
                       
                       <div class="field is-grouped">
                         <div class="control">
-                          <button class="button is-info">Submit</button>
+                          <button class="button is-info" type="submit">Submit</button>
                         </div>
                         <div class="control">
-                          <button class="button is-link is-light" @click="clear">Clear</button>
+                          <button class="button is-link is-light" @click="clear">clear</button>
                         </div>
                       </div>
 
@@ -71,6 +71,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => ({
     username: "",
