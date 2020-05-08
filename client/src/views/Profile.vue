@@ -1,184 +1,122 @@
 <template>
   <div class="profile">
-      <section class="hero is-dark is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <span class="icon">
-                <i class="fas fa-user-cog"></i>
-            </span>
-            User Profile
-          </h1>
-        </div>
-      </div>
-    </section>
     <section class="section">
-        <div class="columns">
-            <!--First Column with ID Card-->
-            <div class="column is-one-third">
-                <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                    <img :src="image" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-content">
-                            <p class="title is-4">Marcus Aurelius</p>
-                            <p class="subtitle is-6">@meditations</p>
-                        </div>
-                        <div class="media-right">
-                            <span class="button icon" @click="profileModal()">
-                                <i class="fas fa-cog"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        <h1 class="title is-6">Description</h1>
-                        <p>{{ description }}</p>
-                    </div>
-                </div>
-
-                <footer class="card-footer">
-                    <p class="card-footer-item">{{ age }} years</p>
-                    <p class="card-footer-item">{{ height }} cm</p>
-                    <p class="card-footer-item">{{ weight }} lbs</p>
-                </footer>
-                </div>
-            </div>
-
-            <UpdateProfile :isOpenProfile="isOpenProfile" v-on:close-profile="profileModal()" v-on:update-profile="updateProfile"></UpdateProfile>
-
-            <!--Second Column with Current Stats and Goals-->
-            <div class="column is-one-third">
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">
-                            Goals
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <p>Focus: {{ focus }}</p>
-                            <p>Weight: {{ goalweight }} lbs</p>    
-                            <p>Avg Steps: {{ goalsteps }}</p>
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <a class="card-footer-item button" @click="goalModal()">Edit</a>
-                    </footer>
-                </div>
-
-            <UpdateGoals :isOpenGoal="isOpenGoal" v-on:update-goals="updateGoals" v-on:close-goals="goalModal()"></UpdateGoals>  
-
-                <br> <!--adds space between elements-->
-
-                <div class="box has-text-centered">
-                    <h1 class="title">Weight Change</h1>
-                    <p> {{ weightdif }} lbs from your goal!</p>
-                </div>
-
-            </div> <!--Column for main columns-->
-            <div class="column is-one-third">
-                <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                    Excercise Log
-                    </p>
-                </header>
-                <div class="table-container">
-                <div class="card-content">
-                    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Excercise</th>
-                            <th>Duration</th>
-                            <th>Calories</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><time datetime="2016-1-1">11:09 - 1 Jan 2016</time></td>
-                            <td>Hiking</td>
-                            <td>2:00</td>
-                            <td>350</td>
-                        </tr>
-                        <tr>
-                            <td><time datetime="2016-1-1">14:13 - 9 Jan 2016</time></td>
-                            <td>Running</td>
-                            <td>0:30</td>
-                            <td>120</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <footer class="card-footer">
-                        <router-link to="/routine" class="card-footer-item button">
-                            Add New Excercise
-                        </router-link>
-                </footer>
-                </div>
-                </div>
-                
-            </div> <!--Column for main columns-->
-        </div> <!--Columns for main columns-->
+        <div class="content">
+            <figure class="image is-128x128">
+                <img :src="image">
+            </figure>
+        </div>
     </section>
+    <section class="section">        
+        <div class="content">
+            <h1 class="title">{{name}}</h1>
+                        <p>{{city}}</p>
+        </div>
+    </section>
+    <section>
+        <div class="title">Exercise Log</div>
+        <div class="card">
+         <header class="card-header">
+            <p class="card-header-title">
+                Crunches
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </a>
+         </header>
+        <div class="card-content">
+            <div class="content">
+                Lie faceup with knees bent and hands behind head. Inhale and, as you exhale, draw your belly button in toward your spine. Press lower back into the floor and lift upper back off the floor and slightly forward. Lower to return to the starting position. That’s 1 rep.
+            </div>
+        </div>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+    </footer>
+</div>
+        <div class="card">
+         <header class="card-header">
+            <p class="card-header-title">
+                Vertical leg crunch
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </a>
+         </header>
+        <div class="card-content">
+            <div class="content">
+                Lie faceup with lower back pressed into the floor. Place hands behind your head. Extend legs straight up, crossed at ankles with a slight bend in knees. Contract abdominal muscles by lifting torso toward knees. Make sure to keep chin off your chest with each contraction. Exhale as you contract upward, and inhale as you return to the starting position.
+            </div>
+        </div>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+    </footer>
+</div>
+        <div class="card">
+         <header class="card-header">
+            <p class="card-header-title">
+                Flutter kick
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </a>
+         </header>
+        <div class="card-content">
+            <div class="content">
+                Lie faceup with legs extended, toes pointed, and hands tucked under glutes to support lower back. Lift both legs a few inches off the floor and alternately kick legs up and down.
+            </div>
+        </div>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+    </footer>
+</div>
+        <div class="card">
+         <header class="card-header">
+            <p class="card-header-title">
+                Plank jack
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </a>
+         </header>
+        <div class="card-content">
+            <div class="content">
+                Start in a modified plank position, balancing on forearms (elbows aligned under shoulders) and toes. Tighten abs so your body is straight from head to heels. Keeping torso tight, hop feet out wide. Hop feet back to the starting position and repeat.
+            </div>
+        </div>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+    </footer>
+</div>
+    </section>    
   </div>
 </template>
 
 <script>
-import UpdateProfile from "@/components/UpdateProfile.vue";
-import UpdateGoals from "@/components/UpdateGoals.vue"
+import Profile from '../models/Profile'
 export default {
     data: () => ({
-        image: "https://external-preview.redd.it/BQ9ia45GPitMXmDRYj-I4MkAySsaQ8y3pmNdyT0xp6s.jpg?auto=webp&s=a038bba7257999e84e8fd1d2a848d44f3f3b71af",
-        //use for modal
-        isOpenProfile: false,
-        isOpenGoal: false,
-        //current statistics
-        description: "History enthusiast interested in hiking as a training regime to emulate the marches of Roman legionnaires",
-        age: 23,
-        height: 180,
-        weight: 200,
-        sex: "Male",
-        //goals
-        focus: "Weight Lost",
-        goalweight: 190,
-        goalsteps: 5000,
-    }),
-    methods: {
-        updateGoals (newfocus, newgoalweight, newgoalsteps) {
-            this.focus = newfocus,
-            this.goalweight = newgoalweight,
-            this.goalsteps = newgoalsteps
-        },
-        updateProfile (newdescription, newage, newheight, newweight) {
-            this.description = newdescription,
-            this.age = newage,
-            this.height = newheight,
-            this.weight = newweight
-        },
-        goalModal () {
-            this.isOpenGoal = !this.isOpenGoal;
-        },
-        profileModal () {
-            this.isOpenProfile = !this.isOpenProfile;
-        }
-    },
-    computed: {
-        weightdif () {
-            return Math.abs(this.weight - this.goalweight)
-        }
-    },
-    components: {
-        UpdateProfile,
-        UpdateGoals
+        Profile,
+        image: Profile.State.currUser.profilePic,
+        name: Profile.State.currUser.Name,
+        city: Profile.State.currUser.City
+        }),
+    created(){
+        Profile.Init()
     }
 }
 </script>
-
-<style>
-</style>
+                       
+                  
+       

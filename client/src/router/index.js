@@ -1,7 +1,16 @@
-import Vue from "vue";
+import Vue from 'vue';
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import {CurrentUser} from '../models/Users';
+import Calorie from '../views/Calorie.vue';
+import ContactMe from '../views/ContactMe.vue';
+import Exercise from '../views/Exercise.vue';
+import Login from '../views/Login.vue';
+import LoginPage from '../views/LoginPage.vue';
+import Logout from '../views/Logout.vue';
+import Profile from '../views/Profile.vue';
+import Register from '../views/Register.vue';
+import Signup from '../views/Signup.vue';
 
 Vue.use(VueRouter);
 const routes = [
@@ -26,10 +35,10 @@ const routes = [
   import("../views/Login.vue")
 },
 {
-  path:"/SignUp",
-  name:"SignUp",
+  path:"/Signup",
+  name:"Signup",
   component:()=>
-  import("../views/SignUp.vue")
+  import("../views/Signup.vue")
 },
 {
   path:"/Exercise",
@@ -53,10 +62,10 @@ const routes = [
   import("../views/LoginPage.vue")
 },
 {
-  path:"/Contact Me",
-  name:"Contact Me",
+  path:"/ContactMe",
+  name:"ContactMe",
   component:()=>
-  import("../views/Contact Me.vue")
+  import("../views/ContactMe.vue")
 },
 {
   path:"/Logout",
