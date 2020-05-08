@@ -7,7 +7,8 @@ const Profile = [
         Age: 18,
         Height:189,
         Sex:"Male",
-        Description: " Member of pubg game"},
+        Description: " Member of pubg game"
+    },
         {
             UserId: 2,
             Name:"oman",
@@ -17,7 +18,8 @@ const Profile = [
             Height:160,
             Sex:"Female",
             Description: "From glaxy 69s group"
-        }
+        },
+        
     ];
     const Calorie= [
         {
@@ -57,7 +59,7 @@ function editProfile(userid, newAge,  newHeight, newDescription){
     user.Description = newDescription;
     return user;
 };
-function editCalorie(userid, newFocus, newStep){
+function editGoals(userid, newFocus, newStep){
     const user = Calorie.find(x=> x.UserId == userid);
     user.Focus = newFocus;
     user.StepGoal = newStep;
@@ -73,7 +75,7 @@ function getuser(token){
 // getuser help us to get the current index with the help of token and we can get to know about userId//
 }
 module.exports = {
-    Profile, calorie, Exercise,
+    Profile, Calorie, Exercise,
     editProfile, editGoals, addExercise
 }
 
