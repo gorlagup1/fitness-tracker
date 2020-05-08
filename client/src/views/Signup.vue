@@ -1,22 +1,24 @@
 <template>
   <div class="container">
-    <div id = "progress"></div>
-    <div id = "register">
-      <i v-if="position === 0 class='previousButton fas fa-user">/i>
-      <i v-else class="previousButton fas fa-arrow-left"></i>
+    <div id = "progress" :style="{width:progress}"></div>
+  <h1 :class="{'show-final': showFinal}">Thank you for your registration, {{ registerStepa[0].value }}</h1>
+   <div id = "register">
+      <i v-if ="position === 0" class='previousButton fas fa-user">/i>
+      <i v-else class="previousButton fas fa-arrow-left" @click="previousStep"></i>
       <i class="forwardBuutton fas fa-arrow-right"></i>
-      <div id = "inputContainer" :class="{'showContainer':showContainer}>
-        <form>
+      <div id = "inputContainer" :class="{'showContainer': showContainer></i>
+        <form @submit.prevent="checkStep">
           <input id="inputField" :type="inputType" v-model="inputValue" ref="registerinput" required />>
           <label id="inputLabel">{{ inputLabel }}</label>
         </form>
         <div id="inputProgress"></div>
 </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
+  import { setTimeout } from 'timers';
 export default {
  
     data:() => {
@@ -60,16 +62,69 @@ export default {
       },
   showStep(){
     setTimeout(() => {
-this.showContainer = true;
+this.showCo
+ntainer = true;
     },100)
-  }
     },
+    hideStep(callback) {
+    this.showContainer = false;
+    setTimeout(callback,100);  
+  },
+  previousStep() {
+this.position -=1;
+register.className = '';
+this.hideStep(this.setStep);
+  this.setProgress();
+  },
+    checkStep(){
+      if(!this.registerSteps[this.position].pattern.test(this.inputValue)){
+    register.classList.add('wrong');
+    register.classList.add('wronganimation');
+    setTimeout(() => {
+    register.classList.remove('wronganimation');
+    }, 500);
+    this.$refs.registerinput.focus();
+      }
+    else{
+      register.className = '';
+       register.classList.add('okanimation');
+    setTimeout(() => {
+    register.classList.remove('okanimation');
+    }, 200);
+
+    this.registerSteps[this.position].value = this.inputValue;
+
+    this.position +=1;
+    if(this.registerSteps[this.position]) {
+      this.hideStep(this.setStep);
+    }
+    else{
+      this.hideStep(() => {
+        register.className='close';
+        setTimeout(() => {
+          this.showFinal = true;
+    }, 1000);
+    });
+    }
+    }
+    this.setProgress();
+    },
+    setProgress(){
+      this.progress = (this.position / this.registerSteps.length * 100) + '%';
+    }
+},
+  
     mounted(){
-      this.setStep();
+     let register= document.getElementById('register');
+     this.setStep();
 
     }
         
 </script>
+
+    }
+  }
+}
    <style lang="scss" scoped>
    .container{
      position:relative;
@@ -82,6 +137,7 @@ this.showContainer = true;
      justify-content: center;
      align-items: center;
      background: radial-gradient(#009345,#106B4E);
+     
      #progress{
        position:absolute;
        top:0;
@@ -93,27 +149,57 @@ this.showContainer = true;
        transition:width .8s ease-in-out;
      }
      }
+
+     h1{
+       position:absolute;
+       width: max-content;
+       font-size:2rem;
+       color: #fff;
+       opacity:0;
+       transition: .8s ease-in-out;
+
+       &show-final{
+         opacity:1;
+
+       }
+     }
+
      #register{
        position:relative;
        width:480px;
        height:80px;
-       background-color:0 15px 30px rgba(0,0,0,.2),
+       padding: 10px;
+       background-color: #fff;
+       box-shadow:      0 15px 30px rgba(0,0,0,.2),
                         0 10px 10px rgba(0,0,0,.2);
-
+  &.close{
+    width: 0;
+    padding:10px 0;
+    overflow:hidden;
+    transition: .8s ease-in-out;
+    box-shadow:0 16px 24px 2px rgba(0,0, 0, .2);
+  }
      }
-}
-     .previousButton{
+
+     .previousdButton{
        position:absolute;
        left:30px;
-       top:12px;
-       font-size:1rem;
-       color:#9e9e9e;
+       top:20px;
+       font-size:3rem;
+       color:#106B4E;
        cursor:pointer;
-       z-index:2;
+       z-index:20;
+
        &:hover{
-         color:#009
+         color:#009345;
        }
      }
+
+     .wrong .forwardButton { color: #D93F38; }
+     .close .forwardButton, .close .previousButton {
+       color: #fff;
+     }
+
      #inputContainer{
        position:relative;
        padding:30px 20px 20px 20px;
@@ -153,16 +239,30 @@ this.showContainer = true;
          border-bottom:6px solid #106B4E;
          transition:width .6s ease-in-out;
        }
+       .wrong #inputProgress {
+         border-color:#D93F38;
+       }
        .showContainer{
          opacity:1 !important;
          #inputProgress{
            width:100%;
          }
+       } 
+       .wronganimation{
+         animation:.5s linear 0s 1 wrong-animation;
        }
+       .okanimation{
+         animation: .2s linear 0s 1 wrong-animation;
 
-  
-    
-   </style>
-                
+       }
+       @keyframes wrong-animation {
+         0% { transform: translateX(0);}
+         20% { transform: translateX(-20);}
+         40% { transform: translateX(20);}
+         60% { transform: translateX(-20);}
+         80% { transform: translateX(20);}
+         100% { transform: translateX(0);}
+       }
+       @keyframes 
 
-                   
+  </style>
