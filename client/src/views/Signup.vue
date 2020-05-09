@@ -1,115 +1,231 @@
 <template>
-  <section class="container">
-    <div class="columns has-text-centered">
-      <div class="column">
-        <div class="hero">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">Signup Interface</h1>
-              <!-- <h2 class="subtitle">Hero subtitle</h2> -->
-              <!-- TODO: ADJUST THE PADDING -->
-            </div>
-          </div>
-        </div>
-      </div>
+<article>
+  <div class="container" :class="{'signup-active': signUp}">>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-left">
+<h2>Welcome Back</h2>
+<p>Please login with your personal info</p>
+<button class="invert" id="signIn" @click="signUp = !signUp">Sign in</button>
     </div>
-    <div class="columns has-text-centered">
-      <div class="column">
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Name" v-model="newUser.Name" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Role</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Role" v-model="newUser.Role" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Login</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Login" v-model="newUser.Login" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Password" v-model="newUser.Password" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">User Type</label>
-          <div class="control">
-            <div class="select">
-              <select v-model="newUser.Type_ID">
-                <option value="0">Standard User</option>
-                <option value="1">Signup</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Profile Pic URL</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="ProfilePic" v-model="newUser.Profile_Pic" />
-          </div>
-        </div>
-
-        <div class="buttons">
-          <button class="button is-success" v-on:click="addUser">Add this user</button>
-        </div>
-
-        <!-- <div class="column"> -->
-        <!-- PRINTER TONER STATUS HERE -->
-        <!-- </div> -->
-      </div>
-      <div class="column"></div>
+    <div class="overlay-right">
+      <h2>Hello, Friend!</h2>
+      <p>Please enter your personal details</p>
+      <button class="invert" id="signUp" @click="signUp = !signUp">Signup</button>
     </div>
-  </section>
-</template>
-
-<script>
-import { CurrentUser } from "../models/Users";
-import Signup from "../models/Signup";
-export default {
-  data: () => ({
-    CurrentUser: CurrentUser,
-    newUser: {
-      Name: "",
-      Role: "",
-      Login: "",
-      Password: "",
-      Type_ID: 0,
-      Profile_Pic: ""
+    </div>
+    </div>
+    <form class="Signup" action="#">
+      <h2>Create login</h2>
+      <div>Use your email form for registration</div>
+ <input type="text" placeholder="Name" />
+ <input type="email" placeholder="Email" />
+ <input type="password" placeholder="Password" />
+</form>
+    <form class="sign-in" action="#">
+      <h2>Sign In</h2>
+      <div>Use your account</div>
+ 
+ <input type="email" placeholder="Email" />
+ <input type="password" placeholder="Password" />
+ <a href="#">Forgot your passoword?</a>
+ <button>Signup</button>
+      </form>
+    </div>
+  </article>
+  </template>
+  <script>
+    export default {
+    data: () => {
+      return {
+        signUp: false
+      }
     }
-  }),
-  async beforeCreate() {},
-  async created() {},
-  updated() {},
-  components: {},
-  computed: {},
-  methods: {
-    addUser: function() {
-      Signup.addUser(this.newUser);
-      this.newUser = {
-      Name: "",
-      Role: "",
-      Login: "",
-      Password: "",
-      Type_ID: 0,
-      Profile_Pic: ""
-    };
     }
-  }
-};
-</script>
+    </script>
+    <style lang="scss" scoped>
+      .container {
+        position: relative;
+        width:768px;
+        height: 480px;
+        border-radius:10px;
+        overflow:hidden;
+        box-shadow:0 15px 30px rgba(0, 0, 0 , .2),
+                   0 10px 10px rgba(0, 0, 0, .2);
+         background:linear-gradient(to bottom, #efefef, #ccc);
+         
+         .overlay-container {
+           position:absolute;
+           top:0;
+           left:50%;
+           width:50%;
+           height:100%;
+           overflow: hidden;
+           transition:transform .5s ease-in-out;
+           z-index: 100;
+         }
 
-<style>
-</style>
+         .verlay {
+           position: relative;
+           left: -100%;
+           height: 100%;
+           width: 200%;
+           background: linear-gradient(to bottom right, #7FD625, #009345);
+           color: #fff;
+           transform: translateX(0);
+           transition: transform .5s ease-in-out;
+            }
+
+            @mixin  overlays($property){
+           position:absolute;
+           top:0;
+           display:flex;
+           right:0;
+           display:flex;
+           align-items:center;
+           justify-content:space-around;
+           flex-direction:column;
+           padding:70px 40px;
+           width:calc(50% - 80px);
+           height:calc(100% - 140px);
+           text-align:center;
+           transform:translateX($property);
+           transition:transform .5s ease-in-out;
+         }
+
+         .overlay-left{
+           @include overlays(-20%);
+         }
+
+         .overlay-right{
+           @include overlays(0);
+           right:0;
+         }
+      }
+
+      h2{
+        margin: 0;
+      }
+
+      P {
+        margin: 20px 0 30px;
+      }
+
+      button{
+        border-radius: 20px;
+        border: 1px solid #009345;
+        background-color: #009345;
+        color:#fff;
+        font-size: 1rem;
+        font-weight:bold;
+        padding: 10px 40px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform .1s ease-in;
+
+        &:active {
+          transform: scale(.9);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+        
+        button.invert{
+          background-color: transparent;
+          border-color:#fff;
+        }
+
+        form {
+          position: absolute;
+          top:0;
+          display: flex;
+          align-items:center;
+          justify-content:space-around;
+          flex-direction:column;
+          padding: 90px 60px;
+          width: calc(50% - 120px);
+          height: calc(100% - 180px);
+          text-align:center;
+          background: linear-gradient(to bottom, #efefef, #ccc);
+          transition: all .5s ease-in-out;
+
+          div {
+            font-size:1rem;
+
+          }
+
+          input {
+            background-color:#eee;
+            border:none;
+            padding: 8px 15px;
+            margin:6px 0;
+            width: calc(100% - 30px);
+            border-radius: 15px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: insert 0 1px 2px rgba(0, 0, 0, .4), 0 -1px ipx #fff, 0 1px 0 #fff,
+                               0 -1px 1px #fff,
+                               0 1px 0 #fff;
+                               overflow:hidden;
+                               &:focus {
+                                 outline: none;
+                                 background-color:rgba(0, 0, 0 , .2)}
+          }
+                               }
+    
+     .sign-in {
+       left:0;
+       z-index: 2;
+     }
+
+     .sign-up{
+       left:0;
+       z-index: 1;
+       opacity: 0;
+       animation: show .5s;
+     }
+
+     .sign-up-active{
+       .sign-in{
+         transform: translateX(100%);
+       }
+
+       .sign-up{
+         transform: translateX(100%);
+         opacity: 1;
+         z-index: 5; 
+       }
+
+       .overlay-container {
+         transform: translateX(-100%);
+       }
+       .overlay{
+         transform: translateX(50%);
+       }
+       .overlay-left{
+         transform: translateX(0);
+       }
+       .overlay-right{
+         transform: translateX(20%);
+       }
+       }
+       @keyframes show {
+         0% {
+           opacity: 0;
+           z-index: 1;
+
+         }
+         49% {
+           opacity: 0;
+           z-index: 1;
+         }
+         50%{
+           opacity: 0;
+           z-index: 1;
+         }
+       }
+     
+     
+      </style>
+  
