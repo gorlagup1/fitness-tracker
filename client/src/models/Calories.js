@@ -27,7 +27,4 @@ export function addprotein() {
 export function addfat() {
     this.fatCount += this.newFat;
 };
-export async function Signup(username, password) {
-    const user = await myFetch('/users/signup', { username, password }) ;
 
-    return CurrentUser = user;}
