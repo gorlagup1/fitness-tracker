@@ -43,7 +43,7 @@ export default {
         },
         {
           label: "create your password",
-          type="password",
+          type:"password",
           value:"",
           pattern:/.+/
         }
@@ -117,14 +117,11 @@ this.hideStep(this.setStep);
     mounted(){
      let register= document.getElementById('register');
      this.setStep();
-
-    }
-        
-</script>
-
-    }
-  }
 }
+}
+  </script>
+
+    
    <style lang="scss" scoped>
    .container{
      position:relative;
@@ -216,7 +213,9 @@ this.hideStep(this.setStep);
          background:transparent;
          box-shadow:none;
          border:none;
-         &:valid + #inputLabel1{
+
+
+         &:valid + #inputLabel{
            top:3px;
            left:42px;
            font-size:.7rem;
@@ -230,10 +229,11 @@ this.hideStep(this.setStep);
          top:32px;
          left:20px;
          font-size:1.35rem;
-
+         font-weight:bold;
          pointer-events:none;
          transition:.2s ease-in-out;
        }
+       
        #inputProgress{
          width:0;
          border-bottom:6px solid #106B4E;
@@ -263,6 +263,6 @@ this.hideStep(this.setStep);
          80% { transform: translateX(20);}
          100% { transform: translateX(0);}
        }
-       @keyframes 
+      
 
   </style>
