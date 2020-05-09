@@ -76,7 +76,7 @@ const routes = [
 },
 
 ];
-
+ 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
@@ -88,4 +88,4 @@ router.beforeEach(( to,from,next)=>{
 });
 
 
-export default router      
+export default router     

@@ -31,7 +31,7 @@
         <div class="field">
           <p class="control">
             <button class="button is-success is-normal">
-            Signup
+            Sign up
             </button>
         </p>
         </div>
