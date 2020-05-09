@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import {Login } from "../models/Exercise1";
+import {Login } from "../models/Users";
 export default {
   data(){
       return {
@@ -44,7 +44,7 @@ export default {
       try{
           Login(this.email, this.password);
           //if no error display the log
-          this.$router.push('Home');
+          this.$router.push('/Exercise');
       } catch (error){
           this.error = error;
       }
