@@ -28,7 +28,7 @@
  
  <input type="email" placeholder="Email" />
  <input type="password" placeholder="Password" />
- <a href="#">Forgot your passoword?</a>
+ <a href="..client/models/Exercise">Forgot your passoword?</a>
  <button>Signup</button>
       </form>
     </div>
