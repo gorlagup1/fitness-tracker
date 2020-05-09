@@ -1,231 +1,132 @@
 <template>
-<article>
-  <div class="container" :class="{'signup-active': signUp}">>
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-left">
-<h2>Welcome Back</h2>
-<p>Please login with your personal info</p>
-<button class="invert" id="signIn" @click="signUp = !signUp">Sign in</button>
-    </div>
-    <div class="overlay-right">
-      <h2>Hello, Friend!</h2>
-      <p>Please enter your personal details</p>
-      <button class="invert" id="signUp" @click="signUp = !signUp">Signup</button>
-    </div>
-    </div>
-    </div>
-    <form class="Signup" action="#">
-      <h2>Create login</h2>
-      <div>Use your email form for registration</div>
- <input type="text" placeholder="Name" />
- <input type="email" placeholder="Email" />
- <input type="password" placeholder="Password" />
-</form>
-    <form class="sign-in" action="#">
-      <h2>Sign In</h2>
-      <div>Use your account</div>
- 
- <input type="email" placeholder="Email" />
- <input type="password" placeholder="Password" />
- <a href="..client/models/Exercise">Forgot your passoword?</a>
- <button>Signup</button>
-      </form>
-    </div>
-  </article>
-  </template>
+  <form class="container" @submit.prevent="signup">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" v-model="email" >
+            <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+            </span>
+        </p>
+        </div>
+        <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" v-model="password">
+            <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+            </span>
+        </p>
+        </div>
+        <div class="field">
+        <p class="control">
+            <button class="button is-success">
+            Sign up
+            </button>
+        </p>
+            <button class="button is-primary" @click.prevent="google_login" >
+                Login with Google
+            </button>
+            <br /><br />
+            <button class="button is-primary" @click.prevent="facebook_login" >
+                Login with Facebook
+            </button>
+
+        </div>
+
+        <img :src="profile" v-if="profile" />
+  </form>
+</template>
+
+
   <script>
+  import {Signup} from "../models/Users";
     export default {
     data: () => {
       return {
-        signUp: false
+        email: '',
+        password: '',
+        error: '',
+        profile:null
       }
-    }
-    }
-    </script>
-    <style lang="scss" scoped>
-      .container {
-        position: relative;
-        width:768px;
-        height: 480px;
-        border-radius:10px;
-        overflow:hidden;
-        box-shadow:0 15px 30px rgba(0, 0, 0 , .2),
-                   0 10px 10px rgba(0, 0, 0, .2);
-         background:linear-gradient(to bottom, #efefef, #ccc);
-         
-         .overlay-container {
-           position:absolute;
-           top:0;
-           left:50%;
-           width:50%;
-           height:100%;
-           overflow: hidden;
-           transition:transform .5s ease-in-out;
-           z-index: 100;
-         }
+    },
+    created(){
+      const googleScriptTag = document.createElement('script')
+      googleScriptTag.setAttribute('src','http://apis.google.com/js/api:client.js')
+      document.head.appendChild(googleScriptTag)
 
-         .verlay {
-           position: relative;
-           left: -100%;
-           height: 100%;
-           width: 200%;
-           background: linear-gradient(to bottom right, #7FD625, #009345);
-           color: #fff;
-           transform: translateX(0);
-           transition: transform .5s ease-in-out;
-            }
-
-            @mixin  overlays($property){
-           position:absolute;
-           top:0;
-           display:flex;
-           right:0;
-           display:flex;
-           align-items:center;
-           justify-content:space-around;
-           flex-direction:column;
-           padding:70px 40px;
-           width:calc(50% - 80px);
-           height:calc(100% - 140px);
-           text-align:center;
-           transform:translateX($property);
-           transition:transform .5s ease-in-out;
-         }
-
-         .overlay-left{
-           @include overlays(-20%);
-         }
-
-         .overlay-right{
-           @include overlays(0);
-           right:0;
-         }
+      googleScriptTag.onload = () => {
+        gapi.load('auth2',() =>{
+auth2 = gapi.auth2.init({
+  client_id:GOOGLE_CLIENT-ID,
+  cookiepolicy: 'single_host_origin',
+  scope:'profile email'
+})
+        })
       }
-
-      h2{
-        margin: 0;
-      }
-
-      P {
-        margin: 20px 0 30px;
-      }
-
-      button{
-        border-radius: 20px;
-        border: 1px solid #009345;
-        background-color: #009345;
-        color:#fff;
-        font-size: 1rem;
-        font-weight:bold;
-        padding: 10px 40px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: transform .1s ease-in;
-
-        &:active {
-          transform: scale(.9);
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-        
-        button.invert{
-          background-color: transparent;
-          border-color:#fff;
-        }
-
-        form {
-          position: absolute;
-          top:0;
-          display: flex;
-          align-items:center;
-          justify-content:space-around;
-          flex-direction:column;
-          padding: 90px 60px;
-          width: calc(50% - 120px);
-          height: calc(100% - 180px);
-          text-align:center;
-          background: linear-gradient(to bottom, #efefef, #ccc);
-          transition: all .5s ease-in-out;
-
-          div {
-            font-size:1rem;
-
-          }
-
-          input {
-            background-color:#eee;
-            border:none;
-            padding: 8px 15px;
-            margin:6px 0;
-            width: calc(100% - 30px);
-            border-radius: 15px;
-            border-bottom: 1px solid #ddd;
-            box-shadow: insert 0 1px 2px rgba(0, 0, 0, .4), 0 -1px ipx #fff, 0 1px 0 #fff,
-                               0 -1px 1px #fff,
-                               0 1px 0 #fff;
-                               overflow:hidden;
-                               &:focus {
-                                 outline: none;
-                                 background-color:rgba(0, 0, 0 , .2)}
-          }
-                               }
     
-     .sign-in {
-       left:0;
-       z-index: 2;
-     }
+            window.fbAsyncInit = function() {
+            FB.init({
+            appId      : FACEBOOK_CLIENT_ID,
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v3.0'
+            });
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    },
+    methods: {
+        async signup(){
+            try {
+                await Signup(this.email, this.password);
+                this.$router.push('/exercise');
+            } catch (error) {
+                this.error = error;
+            }
+        },
+        google_login(){
+                auth2.signup()
+                .then(googleUser =>{
+                    console.log(googleUser);
+                    
+                    const profile = googleUser.getBasicProfile();
+                    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                    console.log('Full Name: ' + profile.getName());
+                    console.log('Given Name: ' + profile.getGivenName());
+                    console.log('Family Name: ' + profile.getFamilyName());
+                    console.log("Image URL: " + profile.getImageUrl());
+                    console.log("Email: " + profile.getEmail());
+                    this.profile = profile.getImageUrl();
+                    return Signup("google", googleUser.getAuthResponse().access_token)
+                            .then(x=> this.$router.push('/exercise'))
+                } )
+                .catch(error => this.error = error)
+        },
+        facebook_login(){
+            FB.signup(response => {
+                    console.log(response);
+                    FB.api('/me?fields=email,name,picture', response => {
+                        console.log(response);
+                        this.profile = response.picture.data.url;
+                    });
+                    Signup("facebook", response.authResponse.accessToken)
+                        .then(x=> this.$router.push('/exercise'))
+                        .catch(error => this.error = error)
+ 
+                }, 
+                {scope: 'email'}
+            );
+        }
+    }
+}
+</script>
 
-     .sign-up{
-       left:0;
-       z-index: 1;
-       opacity: 0;
-       animation: show .5s;
-     }
-
-     .sign-up-active{
-       .sign-in{
-         transform: translateX(100%);
-       }
-
-       .sign-up{
-         transform: translateX(100%);
-         opacity: 1;
-         z-index: 5; 
-       }
-
-       .overlay-container {
-         transform: translateX(-100%);
-       }
-       .overlay{
-         transform: translateX(50%);
-       }
-       .overlay-left{
-         transform: translateX(0);
-       }
-       .overlay-right{
-         transform: translateX(20%);
-       }
-       }
-       @keyframes show {
-         0% {
-           opacity: 0;
-           z-index: 1;
-
-         }
-         49% {
-           opacity: 0;
-           z-index: 1;
-         }
-         50%{
-           opacity: 0;
-           z-index: 1;
-         }
-       }
-     
-     
-      </style>
-  
+<style>
+</style>
