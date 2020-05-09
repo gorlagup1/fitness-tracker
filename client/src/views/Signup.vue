@@ -1,268 +1,115 @@
 <template>
-  <div class="container">
-    <div id = "progress" :style="{width:progress}"></div>
-  <h1 :class="{'show-final': showFinal}">Thank you for your registration, {{ registerStepa[0].value }}</h1>
-   <div id = "register">
-      <i v-if ="position === 0" class='previousButton fas fa-user">/i>
-      <i v-else class="previousButton fas fa-arrow-left" @click="previousStep"></i>
-      <i class="forwardBuutton fas fa-arrow-right"></i>
-      <div id = "inputContainer" :class="{'showContainer': showContainer></i>
-        <form @submit.prevent="checkStep">
-          <input id="inputField" :type="inputType" v-model="inputValue" ref="registerinput" required />>
-          <label id="inputLabel">{{ inputLabel }}</label>
-        </form>
-        <div id="inputProgress"></div>
-</div>
+  <section class="container">
+    <div class="columns has-text-centered">
+      <div class="column">
+        <div class="hero">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Signup Interface</h1>
+              <!-- <h2 class="subtitle">Hero subtitle</h2> -->
+              <!-- TODO: ADJUST THE PADDING -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  
+    <div class="columns has-text-centered">
+      <div class="column">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Name" v-model="newUser.Name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Role</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Role" v-model="newUser.Role" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Login</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Login" v-model="newUser.Login" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Password" v-model="newUser.Password" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">User Type</label>
+          <div class="control">
+            <div class="select">
+              <select v-model="newUser.Type_ID">
+                <option value="0">Standard User</option>
+                <option value="1">Signup</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Profile Pic URL</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="ProfilePic" v-model="newUser.Profile_Pic" />
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="button is-success" v-on:click="addUser">Add this user</button>
+        </div>
+
+        <!-- <div class="column"> -->
+        <!-- PRINTER TONER STATUS HERE -->
+        <!-- </div> -->
+      </div>
+      <div class="column"></div>
+    </div>
+  </section>
 </template>
 
 <script>
-  import { setTimeout } from 'timers';
+import { CurrentUser } from "../models/Users";
+import Signup from "../models/Signup";
 export default {
- 
-    data:() => {
-      return {
-      position: 0,
-      inputLabel:'',
-      inputType:'text',
-      inputValue:'',
-      showContainer:false,
-      registerSteps: [
-        {
-          label:" what's you first name ?",
-          type:"text",
-          value:"",
-          pattern:/.+/
-        },
-        {
-          label:"what's your email?",
-          type:"text",
-          value:"",
-          pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        },
-        {
-          label: "create your password",
-          type:"password",
-          value:"",
-          pattern:/.+/
-        }
-      ]
-      }
-      
-    },
-    methods: {
-      setStep(){
-        this.inputLabel = this.registerSteps[this.position].label;
-        this.inputType=this.registersteps[this.position].type;
-        this.inputValue=this.registerSteps[this.position].value;
-        this.$refs.registerinput.focus();
-        this.showStep();
-      
-      },
-  showStep(){
-    setTimeout(() => {
-this.showCo
-ntainer = true;
-    },100)
-    },
-    hideStep(callback) {
-    this.showContainer = false;
-    setTimeout(callback,100);  
-  },
-  previousStep() {
-this.position -=1;
-register.className = '';
-this.hideStep(this.setStep);
-  this.setProgress();
-  },
-    checkStep(){
-      if(!this.registerSteps[this.position].pattern.test(this.inputValue)){
-    register.classList.add('wrong');
-    register.classList.add('wronganimation');
-    setTimeout(() => {
-    register.classList.remove('wronganimation');
-    }, 500);
-    this.$refs.registerinput.focus();
-      }
-    else{
-      register.className = '';
-       register.classList.add('okanimation');
-    setTimeout(() => {
-    register.classList.remove('okanimation');
-    }, 200);
-
-    this.registerSteps[this.position].value = this.inputValue;
-
-    this.position +=1;
-    if(this.registerSteps[this.position]) {
-      this.hideStep(this.setStep);
+  data: () => ({
+    CurrentUser: CurrentUser,
+    newUser: {
+      Name: "",
+      Role: "",
+      Login: "",
+      Password: "",
+      Type_ID: 0,
+      Profile_Pic: ""
     }
-    else{
-      this.hideStep(() => {
-        register.className='close';
-        setTimeout(() => {
-          this.showFinal = true;
-    }, 1000);
-    });
+  }),
+  async beforeCreate() {},
+  async created() {},
+  updated() {},
+  components: {},
+  computed: {},
+  methods: {
+    addUser: function() {
+      Signup.addUser(this.newUser);
+      this.newUser = {
+      Name: "",
+      Role: "",
+      Login: "",
+      Password: "",
+      Type_ID: 0,
+      Profile_Pic: ""
+    };
     }
-    }
-    this.setProgress();
-    },
-    setProgress(){
-      this.progress = (this.position / this.registerSteps.length * 100) + '%';
-    }
-},
-  
-    mounted(){
-     let register= document.getElementById('register');
-     this.setStep();
-}
-}
-  </script>
-
-    
-   <style lang="scss" scoped>
-   .container{
-     position:relative;
-     font-family:'Noto Sans', sans-serif;
-     font-size: 1 rem;
-     color: #333;
-     width: 100%;
-     min-height:100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background: radial-gradient(#009345,#106B4E);
-     
-     #progress{
-       position:absolute;
-       top:0;
-       left:0;
-       left:0;
-       width:25%;
-       height:100vh;
-       background-color:#106B4E;
-       transition:width .8s ease-in-out;
-     }
-     }
-
-     h1{
-       position:absolute;
-       width: max-content;
-       font-size:2rem;
-       color: #fff;
-       opacity:0;
-       transition: .8s ease-in-out;
-
-       &show-final{
-         opacity:1;
-
-       }
-     }
-
-     #register{
-       position:relative;
-       width:480px;
-       height:80px;
-       padding: 10px;
-       background-color: #fff;
-       box-shadow:      0 15px 30px rgba(0,0,0,.2),
-                        0 10px 10px rgba(0,0,0,.2);
-  &.close{
-    width: 0;
-    padding:10px 0;
-    overflow:hidden;
-    transition: .8s ease-in-out;
-    box-shadow:0 16px 24px 2px rgba(0,0, 0, .2);
   }
-     }
+};
+</script>
 
-     .previousdButton{
-       position:absolute;
-       left:30px;
-       top:20px;
-       font-size:3rem;
-       color:#106B4E;
-       cursor:pointer;
-       z-index:20;
-
-       &:hover{
-         color:#009345;
-       }
-     }
-
-     .wrong .forwardButton { color: #D93F38; }
-     .close .forwardButton, .close .previousButton {
-       color: #fff;
-     }
-
-     #inputContainer{
-       position:relative;
-       padding:30px 20px 20px 20px;
-       margin-right:60px;
-       opacity:1;
-       transition: opacity .3s ease-in-out;
-
-       input{
-         position:relative;
-         width:100%;
-         font-size:1.35rem;
-         font-weight:bold;
-         outline:0;
-         background:transparent;
-         box-shadow:none;
-         border:none;
-
-
-         &:valid + #inputLabel{
-           top:3px;
-           left:42px;
-           font-size:.7rem;
-           font-weight:normal;
-           color:#999;
-         }
-       }
-       }
-       #inputLabel{
-         position:absolute;
-         top:32px;
-         left:20px;
-         font-size:1.35rem;
-         font-weight:bold;
-         pointer-events:none;
-         transition:.2s ease-in-out;
-       }
-       
-       #inputProgress{
-         width:0;
-         border-bottom:6px solid #106B4E;
-         transition:width .6s ease-in-out;
-       }
-       .wrong #inputProgress {
-         border-color:#D93F38;
-       }
-       .showContainer{
-         opacity:1 !important;
-         #inputProgress{
-           width:100%;
-         }
-       } 
-       .wronganimation{
-         animation:.5s linear 0s 1 wrong-animation;
-       }
-       .okanimation{
-         animation: .2s linear 0s 1 wrong-animation;
-
-       }
-       @keyframes wrong-animation {
-         0% { transform: translateX(0);}
-         20% { transform: translateX(-20);}
-         40% { transform: translateX(20);}
-         60% { transform: translateX(-20);}
-         80% { transform: translateX(20);}
-         100% { transform: translateX(0);}
-       }
-      
-
-  </style>
+<style>
+</style>
