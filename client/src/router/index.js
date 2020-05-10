@@ -63,7 +63,7 @@ const routes = [
   import("../views/LoginPage.vue")
 },
 {
-  path:"/ContactMe",
+  path:"/contactMe",
   name:"ContactMe",
   component:()=>
   import("../views/ContactMe.vue")
@@ -73,6 +73,12 @@ const routes = [
   name:"Logout",
   component:()=>
   import("../views/Logout.vue")
+},
+{
+  path:"/Profile",
+  name: "Profile",
+  component:()=>
+  import("../views/Profile.vue")
 },
 
 ];
