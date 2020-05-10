@@ -31,6 +31,8 @@
 
 <script>
 import {Login } from "../models/Users";
+import {mapState,mapMutation} from 'vuex'
+import {onClick} from "../views/Calorie"
 export default {
   data(){
       return {
@@ -42,11 +44,23 @@ export default {
   methods: {
     login(){
       try{
-          Login(this.email, this.password);
-          //if no error display the log
-          this.$router.push('/Profile');
-      } catch (error){
-          this.error = error;
+         console.log(this.email);
+                const user=await Login(this.email);
+                console.log("coimjhggfff");
+                console.log(user);
+                if(user!=null){
+                   this.$store.state.user=this.email;
+                   this.$router.push('/Profile');
+                   document.getElementsByTagName("li")[0].className="is-active";
+                }else{
+                    alert("Sorry,You don't have the account to login,Please Sign up");
+                    this.$router.push('/Signup');
+                }
+                console.log("outside is"+document.getElementsByTagName("a"));
+            } catch (error) {
+                this.error = error;
+            }
+            console.log("outside is"+document);
       }
     }
   }

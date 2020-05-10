@@ -1,10 +1,10 @@
-import { myUpdate } from "./myFetch";
+import { Signup } from "./myFetch";
 
 
-export async function Signup(name,email,password) {
+export async function signup(email,password) {
     console.log("inside signup method");
-    console.log(name);
+   
     console.log(email);
     console.log(password);
-    const user = await myUpdate('/users/login/'+name+','+email+','+password) ;
+    const user = await signup('/users/login/'+email+','+password) ;
 }
