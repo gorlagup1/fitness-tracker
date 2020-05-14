@@ -3,8 +3,8 @@
     <div style="margin:10% 25%;">
   <br>
 <ejs-autocomplete :dataSource='dataItem' :fields='dataFields'
-  placeholder="Select a exercise" popupWidth="250px"
-  popupHeight="400px">
+  placeholder="Select a name" popupWidth="250px"
+  popupHeight="400px" :query='dataQuery'>
   </ejs-autocomplete>
     </div>
   </div>
@@ -14,7 +14,9 @@
 import Vue from "vue";
 import { AutoCompletePlugin } from "@syncfusion/ej2-vue-dropdowns";
 Vue.use(AutoCompletePlugin);
-import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { DataManager, WebApiAdaptor,
+Query } from '@syncfusion/ej2-data';
+
 export default Vue.extend({
   data: function() {
 return {
@@ -24,7 +26,8 @@ dataItem: new DataManager({
   crossDomain: true
 }),
  
-dataFields:{value: 'Exercise'}
+dataFields:{value: 'FirstName'},
+dataQuery: new Query().select(['FirstName', ' EmployeeID']).take(9).requiresCount(),
 };
 
   }
